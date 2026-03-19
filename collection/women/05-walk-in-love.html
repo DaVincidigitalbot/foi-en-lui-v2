@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600;700&display=swap');
+* { margin: 0; padding: 0; }
+body { 
+    width: 4500px; 
+    height: 5400px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background: transparent;
+    text-align: center;
+    flex-direction: column;
+}
+.main-text {
+    font-family: 'Crimson Text', serif;
+    font-size: 350px;
+    font-weight: 700;
+    color: #F5F0E8;
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: -6px;
+    text-shadow: 
+        4px 4px 0px rgba(245, 240, 232, 0.2),
+        8px 8px 0px rgba(245, 240, 232, 0.1),
+        3px 3px 12px rgba(26, 26, 46, 0.6);
+    filter: drop-shadow(2px 2px 6px rgba(0,0,0,0.4));
+}
+.verse-ref {
+    font-family: 'Crimson Text', serif;
+    font-size: 130px;
+    font-weight: 600;
+    color: #C9A84C;
+    letter-spacing: 12px;
+    margin-top: 100px;
+    text-transform: uppercase;
+    text-shadow: 
+        3px 3px 0px #8B7355,
+        2px 2px 8px rgba(0,0,0,0.3);
+}
+.power-stitch {
+    width: 1000px;
+    height: 12px;
+    background: repeating-linear-gradient(
+        90deg,
+        #C9A84C 0px,
+        #C9A84C 20px,
+        #8B7355 20px,
+        #8B7355 25px
+    );
+    margin: 80px auto;
+    border-radius: 6px;
+    position: relative;
+}
+.power-stitch::before,
+.power-stitch::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    background: #C9A84C;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: 2px 2px 0px #8B7355;
+}
+.power-stitch::before { left: -30px; }
+.power-stitch::after { right: -30px; }
+</style>
+</head>
+<body>
+<div class="main-text">WALK IN<br>LOVE</div>
+<div class="power-stitch"></div>
+<div class="verse-ref">EPHESIANS 5:2</div>
+</body>
+</html>

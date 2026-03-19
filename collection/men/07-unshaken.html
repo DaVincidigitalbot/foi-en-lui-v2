@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600;800&display=swap');
+* { margin: 0; padding: 0; }
+body { 
+    width: 4500px; 
+    height: 5400px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background: transparent;
+    text-align: center;
+    flex-direction: column;
+}
+.main-text {
+    font-family: 'Crimson Text', serif;
+    font-size: 520px;
+    font-weight: 800;
+    color: #1a1a2e;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -10px;
+    margin-bottom: 120px;
+    text-shadow: 
+        4px 4px 0px rgba(26, 26, 46, 0.2),
+        8px 8px 0px rgba(26, 26, 46, 0.1),
+        3px 3px 15px rgba(0,0,0,0.3);
+    filter: drop-shadow(3px 3px 8px rgba(0,0,0,0.3));
+}
+.verse-ref {
+    font-family: 'Crimson Text', serif;
+    font-size: 110px;
+    font-weight: 600;
+    color: #C9A84C;
+    letter-spacing: 15px;
+    text-shadow: 
+        2px 2px 0px #8B7355,
+        1px 1px 6px rgba(0,0,0,0.2);
+}
+.strong-minimal-line {
+    width: 400px;
+    height: 10px;
+    background: #C9A84C;
+    margin: 100px auto;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 
+        inset 0 2px 4px rgba(0,0,0,0.2),
+        0 2px 4px rgba(201, 168, 76, 0.4);
+}
+.strong-minimal-line::before,
+.strong-minimal-line::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    background: #8B7355;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+.strong-minimal-line::before { left: -25px; }
+.strong-minimal-line::after { right: -25px; }
+</style>
+</head>
+<body>
+<div class="main-text">UNSHAKEN</div>
+<div class="strong-minimal-line"></div>
+<div class="verse-ref">PSALM 16:8</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@700;800&display=swap');
+* { margin: 0; padding: 0; }
+body { 
+    width: 4500px; 
+    height: 5400px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background: transparent;
+    text-align: center;
+    flex-direction: column;
+}
+.main-text {
+    font-family: 'Crimson Text', serif;
+    font-size: 320px;
+    font-weight: 800;
+    color: #1a1a2e;
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: -6px;
+    margin-bottom: 80px;
+    text-shadow: 
+        4px 4px 0px rgba(26, 26, 46, 0.2),
+        8px 8px 0px rgba(26, 26, 46, 0.1),
+        3px 3px 15px rgba(0,0,0,0.3);
+    filter: drop-shadow(2px 2px 8px rgba(0,0,0,0.3));
+}
+.verse-ref {
+    font-family: 'Crimson Text', serif;
+    font-size: 130px;
+    font-weight: 700;
+    color: #C9A84C;
+    letter-spacing: 12px;
+    text-shadow: 
+        3px 3px 0px #8B7355,
+        2px 2px 8px rgba(0,0,0,0.3);
+}
+.bold-statement-line {
+    width: 1200px;
+    height: 18px;
+    background: linear-gradient(
+        90deg,
+        #1a1a2e 0%,
+        #1a1a2e 40%,
+        #C9A84C 40%,
+        #C9A84C 60%,
+        #1a1a2e 60%,
+        #1a1a2e 100%
+    );
+    margin: 100px auto;
+    border-radius: 9px;
+    position: relative;
+    box-shadow: 
+        inset 0 3px 6px rgba(0,0,0,0.4),
+        0 2px 4px rgba(26, 26, 46, 0.5);
+}
+.bold-statement-line::before,
+.bold-statement-line::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    background: #1a1a2e;
+    border: 3px solid #C9A84C;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.bold-statement-line::before { left: -40px; }
+.bold-statement-line::after { right: -40px; }
+</style>
+</head>
+<body>
+<div class="main-text">NO WEAPON<br>FORMED<br>SHALL PROSPER</div>
+<div class="bold-statement-line"></div>
+<div class="verse-ref">ISAIAH 54:17</div>
+</body>
+</html>

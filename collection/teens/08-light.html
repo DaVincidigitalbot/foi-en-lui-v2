@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600;700&display=swap');
+* { margin: 0; padding: 0; }
+body { 
+    width: 4500px; 
+    height: 5400px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background: transparent;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+}
+.main-text {
+    font-family: 'Crimson Text', serif;
+    font-size: 550px;
+    font-weight: 700;
+    color: #C9A84C;
+    line-height: 1;
+    letter-spacing: 15px;
+    margin-bottom: 120px;
+    text-shadow: 
+        4px 4px 0px #8B7355,
+        8px 8px 0px rgba(139, 115, 85, 0.5),
+        3px 3px 20px rgba(26, 26, 46, 0.3);
+    filter: drop-shadow(4px 4px 12px rgba(0,0,0,0.2));
+    position: relative;
+    z-index: 2;
+}
+.verse-ref {
+    font-family: 'Crimson Text', serif;
+    font-size: 110px;
+    color: #1a1a2e;
+    letter-spacing: 12px;
+    font-weight: 600;
+    text-shadow: 
+        2px 2px 0px rgba(26, 26, 46, 0.15),
+        1px 1px 6px rgba(0,0,0,0.2);
+    z-index: 2;
+    position: relative;
+}
+.light-radiance {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2500px;
+    height: 2500px;
+    background: radial-gradient(
+        circle at center,
+        rgba(201, 168, 76, 0.15) 0%,
+        rgba(201, 168, 76, 0.08) 30%,
+        rgba(201, 168, 76, 0.03) 50%,
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+.minimal-powerful-line {
+    width: 400px;
+    height: 6px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        #C9A84C 20%,
+        #C9A84C 80%,
+        transparent 100%
+    );
+    margin: 80px auto;
+    border-radius: 3px;
+    z-index: 2;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(201, 168, 76, 0.4);
+}
+</style>
+</head>
+<body>
+<div class="light-radiance"></div>
+<div class="main-text">LIGHT</div>
+<div class="minimal-powerful-line"></div>
+<div class="verse-ref">JOHN 8:12</div>
+</body>
+</html>

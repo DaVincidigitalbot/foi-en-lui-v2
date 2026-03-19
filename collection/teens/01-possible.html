@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600;700&display=swap');
+* { margin: 0; padding: 0; }
+body { 
+    width: 4500px; 
+    height: 5400px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background: transparent;
+    text-align: center;
+    flex-direction: column;
+}
+.verse-text {
+    font-family: 'Crimson Text', serif;
+    font-size: 320px;
+    font-weight: 700;
+    color: #F5F0E8;
+    line-height: 0.9;
+    margin-bottom: 80px;
+    text-shadow: 
+        3px 3px 0px rgba(245, 240, 232, 0.2),
+        6px 6px 0px rgba(245, 240, 232, 0.1),
+        2px 2px 12px rgba(26, 26, 46, 0.6);
+    filter: drop-shadow(2px 2px 8px rgba(0,0,0,0.4));
+}
+.verse-ref {
+    font-family: 'Crimson Text', serif;
+    font-size: 120px;
+    font-weight: 600;
+    color: #C9A84C;
+    letter-spacing: 10px;
+    text-shadow: 
+        2px 2px 0px #8B7355,
+        1px 1px 6px rgba(0,0,0,0.2);
+}
+.trendy-stitching {
+    width: 800px;
+    height: 10px;
+    background: repeating-linear-gradient(
+        45deg,
+        #C9A84C 0px,
+        #C9A84C 15px,
+        #8B7355 15px,
+        #8B7355 20px,
+        transparent 20px,
+        transparent 25px
+    );
+    margin: 80px auto;
+    border-radius: 5px;
+    position: relative;
+    transform: skew(-5deg);
+    box-shadow: 
+        0 2px 4px rgba(201, 168, 76, 0.3),
+        inset 0 1px 2px rgba(0,0,0,0.2);
+}
+.trendy-stitching::before,
+.trendy-stitching::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    background: #C9A84C;
+    border-radius: 50%;
+    transform: translateY(-50%) skew(5deg);
+    box-shadow: 2px 2px 0px #8B7355;
+}
+.trendy-stitching::before { left: -30px; }
+.trendy-stitching::after { right: -30px; }
+</style>
+</head>
+<body>
+<div class="verse-text">NOTHING IS<br>IMPOSSIBLE<br>WITH GOD</div>
+<div class="trendy-stitching"></div>
+<div class="verse-ref">LUKE 1:37</div>
+</body>
+</html>

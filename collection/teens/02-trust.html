@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600;800&display=swap');
+* { margin: 0; padding: 0; }
+body { 
+    width: 4500px; 
+    height: 5400px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background: transparent;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+}
+.shield-teen {
+    position: absolute;
+    top: 400px;
+    right: 500px;
+    width: 140px;
+    height: 168px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="240" viewBox="0 0 200 240"><path d="M100 10 L180 50 L180 130 Q180 180 100 230 Q20 180 20 130 L20 50 Z" fill="%23F5F0E8" stroke="%231a1a2e" stroke-width="4"/><rect x="90" y="50" width="20" height="120" fill="%23C9A84C"/><rect x="50" y="100" width="100" height="20" fill="%23C9A84C"/><text x="70" y="80" font-family="serif" font-size="24" font-weight="bold" fill="%231a1a2e">F</text><text x="100" y="160" font-family="serif" font-size="24" font-weight="bold" fill="%231a1a2e">E</text><text x="130" y="80" font-family="serif" font-size="24" font-weight="bold" fill="%231a1a2e">L</text></svg>') no-repeat center;
+    background-size: contain;
+    opacity: 0.9;
+}
+.verse-text {
+    font-family: 'Crimson Text', serif;
+    font-size: 380px;
+    font-weight: 800;
+    color: #1a1a2e;
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: -8px;
+    margin-bottom: 100px;
+    text-shadow: 
+        3px 3px 0px rgba(26, 26, 46, 0.2),
+        6px 6px 0px rgba(26, 26, 46, 0.1),
+        2px 2px 12px rgba(0,0,0,0.3);
+    filter: drop-shadow(2px 2px 8px rgba(0,0,0,0.2));
+}
+.verse-ref {
+    font-family: 'Crimson Text', serif;
+    font-size: 130px;
+    font-weight: 600;
+    color: #C9A84C;
+    letter-spacing: 12px;
+    text-shadow: 
+        3px 3px 0px #8B7355,
+        2px 2px 8px rgba(0,0,0,0.3);
+}
+.streetwear-stitching {
+    width: 700px;
+    height: 12px;
+    background: repeating-linear-gradient(
+        90deg,
+        #1a1a2e 0px,
+        #1a1a2e 20px,
+        #C9A84C 20px,
+        #C9A84C 25px,
+        #8B7355 25px,
+        #8B7355 30px
+    );
+    margin: 80px auto;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 
+        inset 0 2px 4px rgba(0,0,0,0.3),
+        0 2px 4px rgba(26, 26, 46, 0.4);
+}
+</style>
+</head>
+<body>
+<div class="shield-teen"></div>
+<div class="verse-text">TRUST IN<br>THE LORD</div>
+<div class="streetwear-stitching"></div>
+<div class="verse-ref">PROVERBS 3:5</div>
+</body>
+</html>

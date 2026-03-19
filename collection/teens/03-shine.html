@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600;700&display=swap');
+* { margin: 0; padding: 0; }
+body { 
+    width: 4500px; 
+    height: 5400px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background: transparent;
+    text-align: center;
+    flex-direction: column;
+}
+.main-text {
+    font-family: 'Crimson Text', serif;
+    font-size: 480px;
+    font-weight: 700;
+    color: #C9A84C;
+    line-height: 1;
+    letter-spacing: 12px;
+    margin-bottom: 100px;
+    text-shadow: 
+        4px 4px 0px #8B7355,
+        8px 8px 0px rgba(139, 115, 85, 0.5),
+        3px 3px 15px rgba(26, 26, 46, 0.3);
+    filter: drop-shadow(3px 3px 10px rgba(0,0,0,0.2));
+    position: relative;
+}
+.verse-ref {
+    font-family: 'Crimson Text', serif;
+    font-size: 120px;
+    color: #1a1a2e;
+    letter-spacing: 10px;
+    font-weight: 600;
+    text-shadow: 
+        2px 2px 0px rgba(26, 26, 46, 0.15),
+        1px 1px 6px rgba(0,0,0,0.2);
+}
+.youthful-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2000px;
+    height: 300px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(201, 168, 76, 0.2) 0%,
+        rgba(201, 168, 76, 0.1) 40%,
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: -1;
+}
+.fun-stitching {
+    width: 600px;
+    height: 8px;
+    background: repeating-linear-gradient(
+        90deg,
+        #C9A84C 0px,
+        #C9A84C 12px,
+        #8B7355 12px,
+        #8B7355 16px,
+        #F5F0E8 16px,
+        #F5F0E8 20px
+    );
+    margin: 80px auto;
+    border-radius: 4px;
+    position: relative;
+    transform: rotate(-1deg);
+}
+.fun-stitching::before,
+.fun-stitching::after {
+    content: '✨';
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
+    transform: translateY(-50%);
+    color: #C9A84C;
+    text-shadow: 1px 1px 0px #8B7355;
+}
+.fun-stitching::before { left: -60px; }
+.fun-stitching::after { right: -60px; }
+</style>
+</head>
+<body>
+<div class="youthful-glow"></div>
+<div class="main-text">SHINE</div>
+<div class="fun-stitching"></div>
+<div class="verse-ref">MATTHEW 5:16</div>
+</body>
+</html>

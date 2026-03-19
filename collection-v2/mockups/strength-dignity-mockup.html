@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strength & Dignity Hoodie Mockup - Foi en Lui</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 1200px;
+            height: 1500px;
+            background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .mockup-container {
+            width: 900px;
+            height: 1200px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Hoodie silhouette */
+        .hoodie {
+            width: 700px;
+            height: 900px;
+            background-color: #D4A0A0;
+            position: relative;
+            border-radius: 40px 40px 20px 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .hoodie::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            height: 120px;
+            background-color: #D4A0A0;
+            border-radius: 60px 60px 0 0;
+            box-shadow: inset 0 -10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .hoodie::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 60px;
+            background-color: #c89090;
+            border-radius: 30px;
+            box-shadow: inset 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .sleeves {
+            position: absolute;
+            top: 100px;
+        }
+        
+        .sleeve-left {
+            position: absolute;
+            left: -120px;
+            width: 180px;
+            height: 400px;
+            background-color: #D4A0A0;
+            border-radius: 40px 20px 20px 40px;
+            transform: rotate(-15deg);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .sleeve-right {
+            position: absolute;
+            right: -120px;
+            width: 180px;
+            height: 400px;
+            background-color: #D4A0A0;
+            border-radius: 20px 40px 40px 20px;
+            transform: rotate(15deg);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Design placement on chest */
+        .design-placement {
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .main-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 64px;
+            font-weight: 700;
+            color: #2C1810;
+            text-align: center;
+            line-height: 0.9;
+            margin-bottom: 20px;
+            text-shadow: 
+                1px 1px 0px rgba(0,0,0,0.4),
+                2px 2px 1px rgba(0,0,0,0.3),
+                -1px -1px 0px rgba(255,255,255,0.15);
+        }
+        
+        .verse-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #1a1a1a;
+            text-align: center;
+            line-height: 1.3;
+            max-width: 400px;
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+        }
+        
+        .shield-small {
+            position: absolute;
+            left: 80px;
+            top: 150px;
+            width: 60px;
+            height: 70px;
+        }
+        
+        .brand-name {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #666;
+            letter-spacing: 3px;
+        }
+        
+        .shield-bg { fill: #1a1a2e; stroke: #C9A84C; stroke-width: 3; }
+        .shield-cross-v { fill: #C9A84C; }
+        .shield-cross-h { fill: #C9A84C; }
+        .shield-letters { font-family: serif; font-size: 14px; font-weight: bold; fill: #C9A84C; }
+    </style>
+</head>
+<body>
+    <div class="mockup-container">
+        <div class="hoodie">
+            <div class="sleeves">
+                <div class="sleeve-left"></div>
+                <div class="sleeve-right"></div>
+            </div>
+            
+            <!-- Small shield logo -->
+            <svg class="shield-small" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
+                <path class="shield-bg" d="M10 20 Q10 10 20 10 L100 10 Q110 10 110 20 L110 80 Q110 90 105 95 L65 130 Q60 135 60 135 Q60 135 55 130 L15 95 Q10 90 10 80 Z"/>
+                <rect class="shield-cross-v" x="55" y="25" width="10" height="40"/>
+                <rect class="shield-cross-h" x="40" y="40" width="40" height="10"/>
+                <text class="shield-letters" x="30" y="85">F</text>
+                <text class="shield-letters" x="55" y="85">E</text>
+                <text class="shield-letters" x="80" y="85">L</text>
+            </svg>
+            
+            <div class="design-placement">
+                <div class="main-text">
+                    Strength<br>& Dignity
+                </div>
+                <div class="verse-text">
+                    "She is clothed with strength and dignity;<br>
+                    she laughs without fear of the future."<br>
+                    <em style="font-size: 18px; opacity: 0.8;">— Proverbs 31:25</em>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="brand-name">Foi en Lui</div>
+</body>
+</html>

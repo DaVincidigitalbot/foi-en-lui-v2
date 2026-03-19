@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@700;800&display=swap');
+* { margin: 0; padding: 0; }
+body { 
+    width: 4500px; 
+    height: 5400px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background: transparent;
+    text-align: center;
+    flex-direction: column;
+}
+.main-text {
+    font-family: 'Crimson Text', serif;
+    font-size: 400px;
+    font-weight: 800;
+    color: #F5F0E8;
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: -4px;
+    margin-bottom: 100px;
+    text-shadow: 
+        5px 5px 0px rgba(245, 240, 232, 0.2),
+        10px 10px 0px rgba(245, 240, 232, 0.1),
+        4px 4px 20px rgba(0,0,0,0.7);
+    filter: drop-shadow(3px 3px 10px rgba(0,0,0,0.5));
+}
+.verse-ref {
+    font-family: 'Crimson Text', serif;
+    font-size: 130px;
+    font-weight: 700;
+    color: #C9A84C;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    text-shadow: 
+        3px 3px 0px #8B7355,
+        2px 2px 8px rgba(0,0,0,0.3);
+}
+.power-embroidery {
+    width: 900px;
+    height: 15px;
+    background: repeating-linear-gradient(
+        90deg,
+        #C9A84C 0px,
+        #C9A84C 25px,
+        #8B7355 25px,
+        #8B7355 30px
+    );
+    margin: 80px auto;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 
+        inset 0 2px 4px rgba(0,0,0,0.2),
+        0 2px 4px rgba(201, 168, 76, 0.3);
+}
+.power-embroidery::before,
+.power-embroidery::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 15px;
+    height: 15px;
+    background: #C9A84C;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: 
+        3px 3px 0px #8B7355,
+        1px 1px 4px rgba(0,0,0,0.3);
+}
+.power-embroidery::before { left: -35px; }
+.power-embroidery::after { right: -35px; }
+</style>
+</head>
+<body>
+<div class="main-text">I CAN DO<br>ALL THINGS</div>
+<div class="power-embroidery"></div>
+<div class="verse-ref">PHILIPPIANS 4:13</div>
+</body>
+</html>

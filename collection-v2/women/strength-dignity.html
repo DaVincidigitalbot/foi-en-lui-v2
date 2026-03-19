@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strength & Dignity - Foi en Lui</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 4500px;
+            height: 5400px;
+            background-color: #D4A0A0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .design-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .main-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 320px;
+            font-weight: 700;
+            color: #2C1810;
+            text-align: center;
+            line-height: 0.9;
+            position: relative;
+            z-index: 3;
+            text-shadow: 
+                2px 2px 0px rgba(0,0,0,0.4),
+                4px 4px 2px rgba(0,0,0,0.3),
+                -2px -2px 0px rgba(255,255,255,0.15),
+                0px 6px 4px rgba(0,0,0,0.2);
+            background-image: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 3px,
+                rgba(255,255,255,0.05) 3px,
+                rgba(255,255,255,0.05) 6px
+            );
+            -webkit-background-clip: text;
+            filter: contrast(1.2) brightness(0.95);
+        }
+        
+        .verse-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 180px;
+            font-weight: 400;
+            color: #1a1a1a;
+            text-align: center;
+            line-height: 1.2;
+            position: absolute;
+            bottom: 800px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 3800px;
+            z-index: 2;
+            text-shadow: 
+                1px 1px 0px rgba(0,0,0,0.3),
+                2px 2px 1px rgba(0,0,0,0.2),
+                0px 3px 2px rgba(0,0,0,0.15);
+        }
+        
+        .shield {
+            position: absolute;
+            left: 400px;
+            top: 1200px;
+            width: 240px;
+            height: 280px;
+            z-index: 4;
+        }
+        
+        .shield-bg {
+            fill: #1a1a2e;
+            stroke: #C9A84C;
+            stroke-width: 6;
+            filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.3));
+        }
+        
+        .shield-cross-v {
+            fill: #C9A84C;
+        }
+        
+        .shield-cross-h {
+            fill: #C9A84C;
+        }
+        
+        .shield-letters {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: bold;
+            fill: #C9A84C;
+        }
+        
+        .decorative-flourish {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 4000px;
+            height: 4000px;
+            opacity: 0.08;
+            z-index: 1;
+        }
+        
+        .flourish-path {
+            stroke: #1a1a1a;
+            stroke-width: 8;
+            fill: none;
+            stroke-linecap: round;
+        }
+    </style>
+</head>
+<body>
+    <div class="design-container">
+        <!-- Decorative background flourish -->
+        <svg class="decorative-flourish" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <path class="flourish-path" d="M50 200 Q100 100 200 150 Q300 200 350 100 M200 50 Q250 150 300 200 Q250 250 200 350 Q150 250 100 200 Q150 150 200 50"/>
+            <circle cx="200" cy="200" r="80" class="flourish-path"/>
+        </svg>
+        
+        <!-- Foi en Lui Shield Logo -->
+        <svg class="shield" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
+            <path class="shield-bg" d="M10 20 Q10 10 20 10 L100 10 Q110 10 110 20 L110 80 Q110 90 105 95 L65 130 Q60 135 60 135 Q60 135 55 130 L15 95 Q10 90 10 80 Z"/>
+            <rect class="shield-cross-v" x="55" y="25" width="10" height="40"/>
+            <rect class="shield-cross-h" x="40" y="40" width="40" height="10"/>
+            <text class="shield-letters" x="30" y="85">F</text>
+            <text class="shield-letters" x="55" y="85">E</text>
+            <text class="shield-letters" x="80" y="85">L</text>
+        </svg>
+        
+        <!-- Main text -->
+        <div class="main-text">
+            Strength<br>& Dignity
+        </div>
+        
+        <!-- Bible verse -->
+        <div class="verse-text">
+            "She is clothed with strength and dignity;<br>
+            she laughs without fear of the future."<br>
+            <em style="font-size: 140px; opacity: 0.8;">— Proverbs 31:25</em>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&display=swap');
+* { margin: 0; padding: 0; }
+body { 
+    width: 4500px; 
+    height: 5400px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background: transparent;
+    text-align: center;
+    flex-direction: column;
+}
+.verse-text {
+    font-family: 'Crimson Text', serif;
+    font-size: 300px;
+    font-weight: 600;
+    color: #F5F0E8;
+    line-height: 0.9;
+    margin-bottom: 100px;
+    text-shadow: 
+        3px 3px 0px rgba(245, 240, 232, 0.2),
+        6px 6px 0px rgba(245, 240, 232, 0.1),
+        2px 2px 12px rgba(26, 26, 46, 0.6);
+    filter: drop-shadow(2px 2px 8px rgba(0,0,0,0.4));
+}
+.verse-ref {
+    font-family: 'Crimson Text', serif;
+    font-size: 120px;
+    font-weight: 400;
+    color: #C9A84C;
+    letter-spacing: 10px;
+    text-shadow: 
+        2px 2px 0px #8B7355,
+        1px 1px 6px rgba(0,0,0,0.2);
+}
+.comforting-stitching {
+    width: 700px;
+    height: 8px;
+    background: repeating-linear-gradient(
+        90deg,
+        #C9A84C 0px,
+        #C9A84C 16px,
+        #8B7355 16px,
+        #8B7355 20px,
+        rgba(245, 240, 232, 0.6) 20px,
+        rgba(245, 240, 232, 0.6) 24px
+    );
+    margin: 80px auto;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 
+        inset 0 1px 3px rgba(0,0,0,0.2),
+        0 1px 2px rgba(201, 168, 76, 0.3);
+}
+.comforting-stitching::before,
+.comforting-stitching::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    background: #C9A84C;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: 
+        2px 2px 0px #8B7355,
+        1px 1px 3px rgba(0,0,0,0.2);
+}
+.comforting-stitching::before { left: -25px; }
+.comforting-stitching::after { right: -25px; }
+</style>
+</head>
+<body>
+<div class="verse-text">GOD WILL<br>NEVER LEAVE<br>OR FORSAKE</div>
+<div class="comforting-stitching"></div>
+<div class="verse-ref">DEUTERONOMY 31:8</div>
+</body>
+</html>

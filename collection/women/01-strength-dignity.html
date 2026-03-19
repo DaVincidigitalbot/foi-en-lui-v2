@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
+* { margin: 0; padding: 0; }
+body { 
+    width: 4500px; 
+    height: 5400px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background: transparent;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+}
+.shield {
+    position: absolute;
+    top: 400px;
+    left: 400px;
+    width: 120px;
+    height: 144px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="240" viewBox="0 0 200 240"><path d="M100 10 L180 50 L180 130 Q180 180 100 230 Q20 180 20 130 L20 50 Z" fill="%23F5F0E8" stroke="%231a1a2e" stroke-width="4"/><rect x="90" y="50" width="20" height="120" fill="%23C9A84C"/><rect x="50" y="100" width="100" height="20" fill="%23C9A84C"/><text x="70" y="80" font-family="serif" font-size="24" font-weight="bold" fill="%231a1a2e">F</text><text x="100" y="160" font-family="serif" font-size="24" font-weight="bold" fill="%231a1a2e">E</text><text x="130" y="80" font-family="serif" font-size="24" font-weight="bold" fill="%231a1a2e">L</text></svg>') no-repeat center;
+    background-size: contain;
+    z-index: 1;
+}
+.main-text {
+    font-family: 'Crimson Text', serif;
+    font-size: 320px;
+    font-weight: 700;
+    color: #C9A84C;
+    line-height: 0.9;
+    margin-bottom: 80px;
+    text-shadow: 
+        3px 3px 0px #8B7355,
+        6px 6px 0px rgba(139, 115, 85, 0.5),
+        2px 2px 8px rgba(26, 26, 46, 0.3);
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.2));
+}
+.verse-ref {
+    font-family: 'Crimson Text', serif;
+    font-size: 110px;
+    font-weight: 600;
+    color: #1a1a2e;
+    letter-spacing: 6px;
+    text-shadow: 
+        2px 2px 0px rgba(26, 26, 46, 0.1),
+        1px 1px 4px rgba(0,0,0,0.2);
+}
+.embroidery-line {
+    width: 500px;
+    height: 6px;
+    background: repeating-linear-gradient(
+        90deg,
+        #C9A84C 0px,
+        #C9A84C 8px,
+        #8B7355 8px,
+        #8B7355 12px
+    );
+    margin: 60px auto;
+    border-radius: 3px;
+}
+</style>
+</head>
+<body>
+<div class="shield"></div>
+<div class="main-text">Strength<br>&amp; Dignity</div>
+<div class="embroidery-line"></div>
+<div class="verse-ref">PROVERBS 31:25</div>
+</body>
+</html>

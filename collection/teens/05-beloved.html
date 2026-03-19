@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&display=swap');
+* { margin: 0; padding: 0; }
+body { 
+    width: 4500px; 
+    height: 5400px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background: transparent;
+    text-align: center;
+    flex-direction: column;
+}
+.main-text {
+    font-family: 'Crimson Text', serif;
+    font-size: 420px;
+    font-weight: 600;
+    color: #C9A84C;
+    line-height: 1;
+    letter-spacing: 8px;
+    margin-bottom: 100px;
+    font-style: italic;
+    text-shadow: 
+        3px 3px 0px #8B7355,
+        6px 6px 0px rgba(139, 115, 85, 0.5),
+        2px 2px 12px rgba(26, 26, 46, 0.3);
+    filter: drop-shadow(2px 2px 8px rgba(0,0,0,0.2));
+}
+.verse-ref {
+    font-family: 'Crimson Text', serif;
+    font-size: 120px;
+    font-weight: 400;
+    color: #1a1a2e;
+    letter-spacing: 10px;
+    text-shadow: 
+        2px 2px 0px rgba(26, 26, 46, 0.15),
+        1px 1px 6px rgba(0,0,0,0.2);
+}
+.soft-modern-stitching {
+    width: 650px;
+    height: 6px;
+    background: repeating-linear-gradient(
+        90deg,
+        #C9A84C 0px,
+        #C9A84C 14px,
+        #8B7355 14px,
+        #8B7355 18px,
+        rgba(245, 240, 232, 0.5) 18px,
+        rgba(245, 240, 232, 0.5) 22px
+    );
+    margin: 80px auto;
+    border-radius: 3px;
+    position: relative;
+    transform: rotate(0.5deg);
+}
+.soft-modern-stitching::before,
+.soft-modern-stitching::after {
+    content: '♡';
+    position: absolute;
+    top: 50%;
+    font-size: 25px;
+    transform: translateY(-50%);
+    color: #C9A84C;
+    text-shadow: 1px 1px 0px #8B7355;
+}
+.soft-modern-stitching::before { left: -50px; }
+.soft-modern-stitching::after { right: -50px; }
+</style>
+</head>
+<body>
+<div class="main-text">Beloved</div>
+<div class="soft-modern-stitching"></div>
+<div class="verse-ref">ROMANS 9:25</div>
+</body>
+</html>

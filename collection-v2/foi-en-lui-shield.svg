@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="140" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield shape with pointed bottom -->
+  <path d="M10 20 Q10 10 20 10 L100 10 Q110 10 110 20 L110 80 Q110 90 105 95 L65 130 Q60 135 60 135 Q60 135 55 130 L15 95 Q10 90 10 80 Z" 
+        fill="#1a1a2e" stroke="#C9A84C" stroke-width="3"/>
+  
+  <!-- Gold cross in center -->
+  <rect x="55" y="25" width="10" height="40" fill="#C9A84C"/>
+  <rect x="40" y="40" width="40" height="10" fill="#C9A84C"/>
+  
+  <!-- Letters F E L -->
+  <text x="30" y="85" font-family="serif" font-size="14" font-weight="bold" fill="#C9A84C">F</text>
+  <text x="55" y="85" font-family="serif" font-size="14" font-weight="bold" fill="#C9A84C">E</text>
+  <text x="80" y="85" font-family="serif" font-size="14" font-weight="bold" fill="#C9A84C">L</text>
+</svg>

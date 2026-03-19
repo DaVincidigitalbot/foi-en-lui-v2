@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&display=swap');
+* { margin: 0; padding: 0; }
+body { 
+    width: 4500px; 
+    height: 5400px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background: transparent;
+    text-align: center;
+    flex-direction: column;
+}
+.verse-text {
+    font-family: 'Crimson Text', serif;
+    font-size: 280px;
+    font-weight: 600;
+    color: #F5F0E8;
+    line-height: 0.95;
+    margin-bottom: 80px;
+    text-shadow: 
+        3px 3px 0px rgba(245, 240, 232, 0.2),
+        6px 6px 0px rgba(245, 240, 232, 0.1),
+        2px 2px 12px rgba(26, 26, 46, 0.6);
+    filter: drop-shadow(2px 2px 8px rgba(0,0,0,0.4));
+}
+.verse-ref {
+    font-family: 'Crimson Text', serif;
+    font-size: 120px;
+    font-weight: 400;
+    color: #C9A84C;
+    letter-spacing: 10px;
+    text-shadow: 
+        2px 2px 0px #8B7355,
+        1px 1px 6px rgba(0,0,0,0.2);
+}
+.rugged-line {
+    width: 600px;
+    height: 8px;
+    background: repeating-linear-gradient(
+        90deg,
+        #C9A84C 0px,
+        #C9A84C 20px,
+        #8B7355 20px,
+        #8B7355 24px,
+        transparent 24px,
+        transparent 28px
+    );
+    margin: 70px auto;
+    border-radius: 4px;
+    position: relative;
+}
+.rugged-line::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #C9A84C;
+}
+.rugged-line::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #C9A84C;
+}
+</style>
+</head>
+<body>
+<div class="verse-text">THE LORD<br>IS MY<br>SHEPHERD</div>
+<div class="rugged-line"></div>
+<div class="verse-ref">PSALM 23:1</div>
+</body>
+</html>

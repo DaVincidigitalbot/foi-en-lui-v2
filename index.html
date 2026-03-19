@@ -8,20 +8,18 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --navy: #1a1a2e;
+            --navy: #0a0a0f;
             --gold: #C9A84C;
-            --cream: #F5F0E8;
             --white: #FFFFFF;
-            --dusty-rose: #D4A5A5;
-            --mauve: #B5838D;
-            --charcoal: #2C2C2C;
-            --military-green: #4A5D23;
-            --storm-blue: #2C3E50;
-            --slate: #708090;
+            --grey-800: #1a1a1a;
+            --grey-700: #2a2a2a;
+            --grey-600: #404040;
+            --grey-400: #666666;
+            --grey-200: #e5e5e5;
         }
 
         * {
@@ -36,55 +34,11 @@
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: var(--navy);
+            color: var(--white);
+            background: var(--navy);
             overflow-x: hidden;
-        }
-
-        /* Custom SVG Noise Pattern */
-        .grain-overlay::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            opacity: 0.15;
-            pointer-events: none;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            z-index: 1;
-        }
-
-        /* Gold Foil Text Effect */
-        .gold-foil {
-            background: linear-gradient(135deg, #C9A84C 0%, #FFE17B 25%, #C9A84C 50%, #B8941F 75%, #C9A84C 100%);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shimmer 3s ease-in-out infinite;
-        }
-
-        @keyframes shimmer {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        /* Linen Texture for Light Sections */
-        .linen-texture {
-            background-image: 
-                radial-gradient(circle at 20% 50%, transparent 20%, rgba(245,240,232,0.3) 21%, rgba(245,240,232,0.3) 34%, transparent 35%, transparent),
-                linear-gradient(0deg, rgba(245,240,232,0.1) 1px, transparent 1px);
-            background-size: 40px 40px, 100% 2px;
-        }
-
-        /* Gold Line Dividers */
-        .gold-line {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            margin: 4rem 0;
-            opacity: 0.7;
         }
 
         /* Navigation */
@@ -94,14 +48,15 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 1rem 2rem;
-            transition: all 0.3s ease;
+            padding: 1.5rem 0;
+            transition: all 0.4s ease;
         }
 
         .nav.scrolled {
             backdrop-filter: blur(20px);
-            background: rgba(26, 26, 46, 0.9);
-            border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+            background: rgba(10, 10, 15, 0.95);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+            padding: 1rem 0;
         }
 
         .nav-container {
@@ -110,19 +65,31 @@
             align-items: center;
             max-width: 1400px;
             margin: 0 auto;
+            padding: 0 2rem;
         }
 
         .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .nav-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-text {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 600;
             color: var(--white);
-            letter-spacing: 3px;
+            letter-spacing: 2px;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 3rem;
             list-style: none;
         }
 
@@ -130,13 +97,29 @@
             color: var(--white);
             text-decoration: none;
             font-weight: 400;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             letter-spacing: 0.5px;
             transition: color 0.3s ease;
+            position: relative;
         }
 
         .nav-links a:hover {
             color: var(--gold);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .mobile-menu-btn {
@@ -148,131 +131,82 @@
             cursor: pointer;
         }
 
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--navy);
-            z-index: 2000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem;
-            transform: translateY(-100%);
-            transition: transform 0.3s ease;
-        }
-
-        .mobile-menu.active {
-            transform: translateY(0);
-        }
-
-        .mobile-menu a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 2rem;
-            font-weight: 300;
-        }
-
-        .mobile-close {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            background: none;
-            border: none;
-            color: var(--white);
-            font-size: 2rem;
-            cursor: pointer;
-        }
-
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, var(--navy) 0%, #252547 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
+            background: linear-gradient(135deg, var(--navy) 0%, #151520 100%);
         }
 
-        .hero-content {
-            text-align: center;
-            color: var(--white);
-            max-width: 800px;
-            padding: 0 2rem;
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10,10,15,0.8) 0%, rgba(10,10,15,0.4) 100%);
             z-index: 2;
         }
 
-        .hero-shield {
-            margin-bottom: 3rem;
-            perspective: 800px;
+        .hero-content {
             position: relative;
-            display: inline-block;
+            z-index: 3;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 2rem;
         }
 
-        .hero-shield::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 380px;
-            height: 380px;
-            background: radial-gradient(circle, rgba(201, 168, 76, 0.25) 0%, transparent 65%);
-            border-radius: 50%;
-            animation: glow-pulse 4s ease-in-out infinite;
-            z-index: 0;
-        }
-
-        @keyframes glow-pulse {
-            0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
-            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.3); }
-        }
-
-        .shield-logo {
-            width: 250px;
+        .hero-logo {
+            width: 120px;
             height: auto;
-            object-fit: contain;
-            position: relative;
-            z-index: 1;
-            filter: drop-shadow(0 0 50px rgba(201, 168, 76, 0.4));
-            animation: shield-breathe 4s ease-in-out infinite;
-            transform-style: preserve-3d;
-        }
-
-        @keyframes shield-breathe {
-            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 50px rgba(201, 168, 76, 0.4)); }
-            50% { transform: scale(1.03); filter: drop-shadow(0 0 70px rgba(201, 168, 76, 0.6)); }
-        }
-
-        @media (max-width: 768px) {
-            .shield-logo { width: 180px; }
-            .hero-shield::before { width: 280px; height: 280px; }
-        }
-
-        .hero-verse {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: clamp(2.5rem, 8vw, 6rem);
-            line-height: 1.1;
             margin-bottom: 2rem;
-            opacity: 0;
-            transform: translateY(50px);
-            animation: fadeInUp 1.5s ease 0.5s forwards;
+            filter: drop-shadow(0 0 30px rgba(201, 168, 76, 0.3));
+            animation: breathe 4s ease-in-out infinite;
         }
 
-        .hero-reference {
-            font-family: 'Montserrat', sans-serif;
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .hero-scripture {
             font-size: 1.1rem;
             color: var(--gold);
             margin-bottom: 3rem;
-            letter-spacing: 2px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease 1s forwards;
+            letter-spacing: 1px;
+            font-weight: 300;
         }
 
         .hero-cta {
@@ -282,13 +216,10 @@
             border: 2px solid var(--gold);
             color: var(--gold);
             text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
+            font-weight: 600;
             letter-spacing: 1px;
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease 1.5s forwards;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
         }
 
         .hero-cta:hover {
@@ -298,304 +229,188 @@
             box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
         }
 
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Large Scale Scripture Breaks */
-        .scripture-break {
-            padding: 8rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .scripture-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: clamp(4rem, 12vw, 10rem);
-            font-weight: 400;
-            line-height: 0.9;
-            background: linear-gradient(180deg, var(--gold) 0%, rgba(201, 168, 76, 0.3) 70%, transparent 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            opacity: 0;
-            transform: translateY(100px);
-            transition: all 1s ease;
-        }
-
-        .scripture-break.visible .scripture-text {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Product Collections */
-        .collection-section {
-            padding: 6rem 0;
-            position: relative;
+        /* Men's Collection */
+        .mens-collection {
+            padding: 8rem 0;
+            background: var(--navy);
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 5rem;
             padding: 0 2rem;
         }
 
         .section-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--gold);
             margin-bottom: 1rem;
         }
 
         .section-subtitle {
-            font-size: 1.1rem;
-            color: #666;
+            font-size: 1.2rem;
+            color: var(--grey-400);
             max-width: 600px;
             margin: 0 auto;
+            font-weight: 300;
         }
 
-        /* Women's Collection - Elegant, Flowing */
-        .womens-collection {
-            background: linear-gradient(135deg, var(--cream) 0%, #FAF7F2 100%);
-        }
-
-        .womens-collection .section-title {
-            color: var(--dusty-rose);
-        }
-
-        /* Asymmetric Product Layout */
         .products-grid {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
             display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
-        .featured-layout {
-            display: grid;
-            grid-template-columns: 3fr 2fr;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .featured-product {
-            background: var(--dusty-rose);
-            border-radius: 0;
-            padding: 4rem 3rem;
-            color: var(--white);
-            position: relative;
+        .product-card {
+            background: var(--grey-800);
+            border-radius: 12px;
             overflow: hidden;
-            min-height: 500px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(201, 168, 76, 0.1);
         }
 
-        .featured-product::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                repeating-linear-gradient(45deg, transparent, transparent 1px, rgba(255,255,255,0.03) 1px, rgba(255,255,255,0.03) 3px);
-            pointer-events: none;
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border-color: rgba(201, 168, 76, 0.3);
         }
 
-        .product-verse {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            line-height: 1.2;
-            margin-bottom: 2rem;
+        .product-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
         }
 
-        .product-reference {
-            font-size: 1rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-            letter-spacing: 1px;
+        .product-card:hover .product-image {
+            transform: scale(1.05);
         }
 
-        .product-details {
-            margin-top: auto;
+        .product-info {
+            padding: 2rem;
         }
 
         .product-name {
-            font-size: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
             font-weight: 600;
+            color: var(--gold);
             margin-bottom: 0.5rem;
         }
 
-        .product-price {
-            font-size: 1.2rem;
-            font-weight: 700;
+        .product-scripture {
+            font-size: 0.9rem;
+            color: var(--grey-400);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
         }
 
-        .product-tag {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            background: var(--gold);
-            color: var(--navy);
-            padding: 0.5rem 1rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        .stacked-products {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .compact-product {
-            background: var(--white);
-            padding: 2rem;
-            border: 1px solid rgba(212, 165, 165, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .compact-product:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(212, 165, 165, 0.2);
-        }
-
-        .compact-verse {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 1.5rem;
-            color: var(--navy);
-            margin-bottom: 1rem;
-        }
-
-        /* Men's Collection - Dark, Bold */
-        .mens-collection {
-            background: linear-gradient(135deg, #1C1C1C 0%, var(--navy) 100%);
+        .product-type {
+            font-size: 1rem;
             color: var(--white);
+            margin-bottom: 1rem;
+            font-weight: 400;
         }
 
-        .mens-collection .section-title {
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
             color: var(--gold);
         }
 
-        .mens-featured {
-            background: var(--charcoal);
-        }
-
-        .mens-compact {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(201, 168, 76, 0.2);
-        }
-
-        .mens-compact:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        /* Teens Collection - Energetic */
-        .teens-collection {
-            background: linear-gradient(135deg, var(--slate) 0%, #8A9BA8 100%);
-            color: var(--white);
-        }
-
-        .teens-collection .section-title {
-            color: var(--cream);
-        }
-
-        .teens-products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .teen-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 3rem 2rem;
+        /* Coming Soon Sections */
+        .coming-soon {
+            padding: 6rem 0;
             text-align: center;
-            transform: rotate(-2deg);
-            transition: all 0.3s ease;
+            border-top: 1px solid rgba(201, 168, 76, 0.1);
         }
 
-        .teen-card:nth-child(even) {
-            transform: rotate(2deg);
+        .coming-soon.womens {
+            background: linear-gradient(135deg, var(--grey-800) 0%, var(--grey-700) 100%);
         }
 
-        .teen-card:hover {
-            transform: rotate(0deg) translateY(-10px);
-            background: rgba(255, 255, 255, 0.2);
+        .coming-soon.teens {
+            background: linear-gradient(135deg, var(--grey-700) 0%, var(--navy) 100%);
         }
 
-        /* Our Story - Timeline Format */
-        .our-story {
-            padding: 8rem 0;
-            background: var(--cream);
-            position: relative;
-        }
-
-        .story-timeline {
+        .coming-soon-content {
             max-width: 800px;
             margin: 0 auto;
             padding: 0 2rem;
-            position: relative;
         }
 
-        .timeline-line {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
+        .coming-soon h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .coming-soon p {
+            font-size: 1.1rem;
+            color: var(--grey-400);
+            margin-bottom: 2rem;
+        }
+
+        .notify-btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .notify-btn:hover {
             background: var(--gold);
-            transform: translateX(-50%);
+            color: var(--navy);
         }
 
-        .timeline-item {
-            display: flex;
-            margin-bottom: 4rem;
-            position: relative;
+        /* About Section */
+        .about {
+            padding: 8rem 0;
+            background: var(--grey-800);
+            text-align: center;
         }
 
-        .timeline-item:nth-child(even) {
-            flex-direction: row-reverse;
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        .timeline-content {
-            flex: 1;
-            padding: 2rem;
-            background: var(--white);
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(26, 26, 46, 0.1);
-            margin: 0 2rem;
+        .about h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--gold);
+            margin-bottom: 2rem;
         }
 
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            top: 2rem;
-            width: 20px;
-            height: 20px;
-            background: var(--gold);
-            border-radius: 50%;
-            transform: translateX(-50%);
-            border: 4px solid var(--cream);
+        .about p {
+            font-size: 1.2rem;
+            color: var(--grey-400);
+            margin-bottom: 2rem;
+            line-height: 1.8;
         }
 
-        /* Newsletter Community */
+        .about-logo {
+            width: 100px;
+            height: auto;
+            margin-top: 2rem;
+            opacity: 0.7;
+        }
+
+        /* Newsletter */
         .newsletter {
             padding: 6rem 0;
-            background: var(--navy);
-            color: var(--white);
+            background: linear-gradient(135deg, var(--navy) 0%, #1a1a2e 100%);
             text-align: center;
         }
 
@@ -608,28 +423,35 @@
         .newsletter h2 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 3rem;
-            margin-bottom: 1rem;
             color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            color: var(--grey-400);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
         }
 
         .newsletter-form {
             display: flex;
             max-width: 400px;
-            margin: 2rem auto 0;
+            margin: 0 auto;
             gap: 0;
         }
 
         .newsletter-input {
             flex: 1;
             padding: 1rem 1.5rem;
-            border: none;
+            border: 1px solid var(--grey-600);
             background: rgba(255, 255, 255, 0.1);
             color: var(--white);
             font-size: 1rem;
+            border-radius: 4px 0 0 4px;
         }
 
         .newsletter-input::placeholder {
-            color: rgba(255, 255, 255, 0.6);
+            color: var(--grey-400);
         }
 
         .newsletter-btn {
@@ -640,42 +462,64 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
+            border-radius: 0 4px 4px 0;
         }
 
         .newsletter-btn:hover {
-            background: #FFE17B;
+            background: #E6C068;
         }
 
         /* Footer */
         .footer {
-            background: var(--navy);
-            color: rgba(255, 255, 255, 0.8);
-            padding: 3rem 0 1rem;
-            text-align: center;
+            background: var(--grey-800);
+            color: var(--grey-400);
+            padding: 4rem 0 2rem;
         }
 
         .footer-content {
-            max-width: 800px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
         }
 
         .footer-logo {
             height: 50px;
-            margin-bottom: 2rem;
-            opacity: 0.8;
+            width: auto;
+        }
+
+        .footer-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+
+        .footer-section h3 {
+            color: var(--white);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
         }
 
         .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
         }
 
         .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--grey-400);
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -685,17 +529,18 @@
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 1rem;
+            border-top: 1px solid var(--grey-600);
+            padding-top: 2rem;
+            margin-top: 3rem;
+            text-align: center;
             font-size: 0.9rem;
-            opacity: 0.6;
         }
 
-        /* Scroll Animations */
+        /* Animations */
         .fade-in-up {
             opacity: 0;
             transform: translateY(50px);
-            transition: all 1s ease;
+            transition: all 0.8s ease;
         }
 
         .fade-in-up.visible {
@@ -703,10 +548,10 @@
             transform: translateY(0);
         }
 
-        .stagger-delay-1 { transition-delay: 0.1s; }
-        .stagger-delay-2 { transition-delay: 0.2s; }
-        .stagger-delay-3 { transition-delay: 0.3s; }
-        .stagger-delay-4 { transition-delay: 0.4s; }
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -718,30 +563,21 @@
                 display: block;
             }
 
-            .featured-layout {
-                grid-template-columns: 1fr;
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
             }
 
-            .featured-product {
-                padding: 3rem 2rem;
-                min-height: 400px;
+            .product-card {
+                margin-bottom: 1rem;
             }
 
-            .timeline-line {
-                left: 2rem;
+            .product-image {
+                height: 300px;
             }
 
-            .timeline-item {
-                flex-direction: row !important;
-                padding-left: 4rem;
-            }
-
-            .timeline-content {
-                margin: 0;
-            }
-
-            .timeline-dot {
-                left: 2rem;
+            .product-info {
+                padding: 1.5rem;
             }
 
             .newsletter-form {
@@ -749,9 +585,24 @@
                 gap: 1rem;
             }
 
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
+            .newsletter-input,
+            .newsletter-btn {
+                border-radius: 4px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-brand {
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -760,258 +611,161 @@
     <!-- Navigation -->
     <nav class="nav" id="navbar">
         <div class="nav-container">
-            <span class="nav-brand">FOI EN <span style="color:var(--gold)">LUI</span></span>
+            <div class="nav-brand">
+                <img src="crest-transparent.png" alt="Foi en Lui" class="nav-logo">
+                <span class="nav-text">FOI EN LUI</span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#womens">Women</a></li>
-                <li><a href="#mens">Men</a></li>
+                <li><a href="#collection">Men's Collection</a></li>
+                <li><a href="#womens">Women's</a></li>
                 <li><a href="#teens">Teens</a></li>
-                <li><a href="#story">Our Story</a></li>
+                <li><a href="#about">About</a></li>
             </ul>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <button class="mobile-menu-btn">☰</button>
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobile-menu">
-        <button class="mobile-close" onclick="toggleMobileMenu()">×</button>
-        <a href="#home" onclick="toggleMobileMenu()">Home</a>
-        <a href="#womens" onclick="toggleMobileMenu()">Women</a>
-        <a href="#mens" onclick="toggleMobileMenu()">Men</a>
-        <a href="#teens" onclick="toggleMobileMenu()">Teens</a>
-        <a href="#story" onclick="toggleMobileMenu()">Our Story</a>
-    </div>
-
     <!-- Hero Section -->
-    <section class="hero grain-overlay" id="home">
+    <section class="hero" id="home">
+        <img src="mens-all-things.png" alt="All Things Hoodie" class="hero-bg">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <div class="hero-shield">
-                <img src="logo.png" alt="Foi en Lui Shield" class="shield-logo">
-            </div>
-            <div class="hero-verse gold-foil">
-                "I can do all things through Christ who strengthens me"
-            </div>
-            <div class="hero-reference">PHILIPPIANS 4:13</div>
-            <a href="#womens" class="hero-cta">Discover Faith</a>
+            <img src="crest-transparent.png" alt="Foi en Lui" class="hero-logo">
+            <h1 class="hero-title">FOI EN LUI</h1>
+            <p class="hero-subtitle">Faith in Him</p>
+            <p class="hero-scripture">Philippians 4:13</p>
+            <a href="#collection" class="hero-cta">Shop Collection</a>
         </div>
-    </section>
-
-    <!-- Scripture Break -->
-    <section class="scripture-break fade-in-up">
-        <div class="scripture-text">Faith</div>
-    </section>
-
-    <!-- Women's Collection -->
-    <section class="collection-section womens-collection linen-texture" id="womens">
-        <div class="section-header fade-in-up">
-            <h2 class="section-title">Women's Collection</h2>
-            <p class="section-subtitle">Elegant expressions of faith designed for the modern woman of God</p>
-        </div>
-
-        <div class="featured-layout">
-            <div class="featured-product fade-in-up">
-                <div class="product-tag">NEW</div>
-                <div class="product-verse">"She is clothed with strength and dignity"</div>
-                <div class="product-reference">PROVERBS 31:25</div>
-                <div class="product-details">
-                    <div class="product-name">Dusty Rose Hoodie</div>
-                    <div class="product-price">$54.99</div>
-                </div>
-            </div>
-            
-            <div class="stacked-products">
-                <div class="compact-product fade-in-up stagger-delay-1">
-                    <div class="compact-verse">"For I know the plans I have for you"</div>
-                    <div class="product-reference">JEREMIAH 29:11</div>
-                    <div class="product-details">
-                        <div class="product-name">The Plan - Navy Hoodie</div>
-                        <div class="product-price">$54.99</div>
-                    </div>
-                </div>
-                
-                <div class="compact-product fade-in-up stagger-delay-2" style="background: var(--cream);">
-                    <div class="compact-verse">"Be still and know that I am God"</div>
-                    <div class="product-reference">PSALM 46:10</div>
-                    <div class="product-details">
-                        <div class="product-name">Be Still - Cream Hoodie</div>
-                        <div class="product-price">$54.99</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="products-grid">
-            <div class="compact-product fade-in-up" style="background: var(--mauve); color: white;">
-                <div class="product-verse">"Let your light shine before others"</div>
-                <div class="product-reference">MATTHEW 5:16</div>
-                <div class="product-details">
-                    <div class="product-name">Shine - Mauve Hoodie</div>
-                    <div class="product-price">$54.99</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Scripture Break -->
-    <section class="scripture-break fade-in-up">
-        <div class="scripture-text">Strength</div>
     </section>
 
     <!-- Men's Collection -->
-    <section class="collection-section mens-collection grain-overlay" id="mens">
+    <section class="mens-collection" id="collection">
         <div class="section-header fade-in-up">
             <h2 class="section-title">Men's Collection</h2>
-            <p class="section-subtitle">Bold declarations of faith for the modern warrior of God</p>
-        </div>
-
-        <div class="featured-layout">
-            <div class="featured-product mens-featured fade-in-up">
-                <div class="product-tag">BESTSELLER</div>
-                <div class="product-verse">"I can do all things through Christ"</div>
-                <div class="product-reference">PHILIPPIANS 4:13</div>
-                <div class="product-details">
-                    <div class="product-name">All Things - Black Hoodie</div>
-                    <div class="product-price">$54.99</div>
-                </div>
-            </div>
-            
-            <div class="stacked-products">
-                <div class="compact-product mens-compact fade-in-up stagger-delay-1">
-                    <div class="compact-verse">"Be strong and courageous"</div>
-                    <div class="product-reference">JOSHUA 1:9</div>
-                    <div class="product-details">
-                        <div class="product-name">Courage - Charcoal Hoodie</div>
-                        <div class="product-price">$54.99</div>
-                    </div>
-                </div>
-                
-                <div class="compact-product mens-compact fade-in-up stagger-delay-2">
-                    <div class="compact-verse">"The Lord is my shepherd"</div>
-                    <div class="product-reference">PSALM 23:1</div>
-                    <div class="product-details">
-                        <div class="product-name">The Shepherd - Military Green</div>
-                        <div class="product-price">$54.99</div>
-                    </div>
-                </div>
-            </div>
+            <p class="section-subtitle">Premium faith-forward apparel for the modern believer</p>
         </div>
 
         <div class="products-grid">
-            <div class="compact-product mens-compact fade-in-up" style="background: var(--storm-blue);">
-                <div class="product-verse">"No weapon formed against you shall prosper"</div>
-                <div class="product-reference">ISAIAH 54:17</div>
-                <div class="product-details">
-                    <div class="product-name">No Weapon - Storm Blue Hoodie</div>
-                    <div class="product-price">$54.99</div>
+            <div class="product-card fade-in-up">
+                <img src="mens-all-things.png" alt="All Things Hoodie" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">ALL THINGS</h3>
+                    <p class="product-scripture">Philippians 4:13</p>
+                    <p class="product-type">Black Hoodie</p>
+                    <p class="product-price">$64.99</p>
+                </div>
+            </div>
+
+            <div class="product-card fade-in-up stagger-1">
+                <img src="mens-courage.png" alt="Courage Tee" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">COURAGE</h3>
+                    <p class="product-scripture">Joshua 1:9</p>
+                    <p class="product-type">Charcoal Tee</p>
+                    <p class="product-price">$34.99</p>
+                </div>
+            </div>
+
+            <div class="product-card fade-in-up stagger-2">
+                <img src="mens-shepherd.png" alt="The Shepherd Hoodie" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">THE SHEPHERD</h3>
+                    <p class="product-scripture">Psalm 23:1</p>
+                    <p class="product-type">Military Green Hoodie</p>
+                    <p class="product-price">$64.99</p>
+                </div>
+            </div>
+
+            <div class="product-card fade-in-up stagger-3">
+                <img src="mens-no-weapon.jpg" alt="No Weapon Tee" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">NO WEAPON</h3>
+                    <p class="product-scripture">Isaiah 54:17</p>
+                    <p class="product-type">Storm Blue Tee</p>
+                    <p class="product-price">$34.99</p>
+                </div>
+            </div>
+
+            <div class="product-card fade-in-up stagger-4">
+                <img src="mens-walk-by-faith.png" alt="Walk By Faith Tee" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">WALK BY FAITH</h3>
+                    <p class="product-scripture">2 Corinthians 5:7</p>
+                    <p class="product-type">Black Tee</p>
+                    <p class="product-price">$34.99</p>
+                </div>
+            </div>
+
+            <div class="product-card fade-in-up stagger-1">
+                <img src="mens-armor-of-god.png" alt="Armor of God Hoodie" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">ARMOR OF GOD</h3>
+                    <p class="product-scripture">Ephesians 6:11</p>
+                    <p class="product-type">Charcoal Hoodie</p>
+                    <p class="product-price">$64.99</p>
+                </div>
+            </div>
+
+            <div class="product-card fade-in-up stagger-2">
+                <img src="mens-unshaken.png" alt="Unshaken Tee" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">UNSHAKEN</h3>
+                    <p class="product-scripture">Psalm 16:8</p>
+                    <p class="product-type">Navy Tee</p>
+                    <p class="product-price">$34.99</p>
+                </div>
+            </div>
+
+            <div class="product-card fade-in-up stagger-3">
+                <img src="mens-the-way.png" alt="The Way Tee" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">THE WAY</h3>
+                    <p class="product-scripture">John 14:6</p>
+                    <p class="product-type">Forest Green Tee</p>
+                    <p class="product-price">$34.99</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Scripture Break -->
-    <section class="scripture-break fade-in-up">
-        <div class="scripture-text">Courage</div>
-    </section>
-
-    <!-- Teens Collection -->
-    <section class="collection-section teens-collection" id="teens">
-        <div class="section-header fade-in-up">
-            <h2 class="section-title">Teens Collection</h2>
-            <p class="section-subtitle">Faith-forward style for the next generation</p>
-        </div>
-
-        <div class="teens-products">
-            <div class="teen-card fade-in-up">
-                <div class="product-tag">NEW</div>
-                <div class="product-verse">"Nothing is impossible with God"</div>
-                <div class="product-reference">LUKE 1:37</div>
-                <div class="product-details">
-                    <div class="product-name">Possible - Slate Hoodie</div>
-                    <div class="product-price">$49.99</div>
-                </div>
-            </div>
-            
-            <div class="teen-card fade-in-up stagger-delay-1">
-                <div class="product-verse">"Trust in the Lord with all your heart"</div>
-                <div class="product-reference">PROVERBS 3:5</div>
-                <div class="product-details">
-                    <div class="product-name">Trust - Black Hoodie</div>
-                    <div class="product-price">$49.99</div>
-                </div>
-            </div>
-            
-            <div class="teen-card fade-in-up stagger-delay-2">
-                <div class="product-verse">"Let your light shine"</div>
-                <div class="product-reference">MATTHEW 5:16</div>
-                <div class="product-details">
-                    <div class="product-name">Shine Tee - Dusty Rose</div>
-                    <div class="product-price">$29.99</div>
-                </div>
-            </div>
-            
-            <div class="teen-card fade-in-up stagger-delay-3">
-                <div class="product-verse">"Be strong and courageous"</div>
-                <div class="product-reference">JOSHUA 1:9</div>
-                <div class="product-details">
-                    <div class="product-name">Courage Tee - Military Green</div>
-                    <div class="product-price">$29.99</div>
-                </div>
-            </div>
+    <!-- Women's Collection Coming Soon -->
+    <section class="coming-soon womens" id="womens">
+        <div class="coming-soon-content fade-in-up">
+            <h2>Women's Collection</h2>
+            <p>Elegant expressions of faith designed for the modern woman of God</p>
+            <a href="#newsletter" class="notify-btn">Notify Me When Available</a>
         </div>
     </section>
 
-    <!-- Our Story Timeline -->
-    <section class="our-story linen-texture" id="story">
-        <div class="section-header fade-in-up">
-            <h2 class="section-title">Our Story</h2>
-            <p class="section-subtitle">A journey of faith, fashion, and purpose</p>
+    <!-- Teens Collection Coming Soon -->
+    <section class="coming-soon teens" id="teens">
+        <div class="coming-soon-content fade-in-up">
+            <h2>Teens Collection</h2>
+            <p>Faith-forward style for the next generation of believers</p>
+            <a href="#newsletter" class="notify-btn">Notify Me When Available</a>
         </div>
+    </section>
 
-        <div class="story-timeline">
-            <div class="timeline-line"></div>
-            
-            <div class="timeline-item fade-in-up">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>The Vision</h3>
-                    <p>It started with a simple truth: faith should be worn boldly. Not hidden, but declared. Not whispered, but proclaimed through every thread.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-item fade-in-up stagger-delay-1">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>The Name</h3>
-                    <p>Foi en Lui - "Faith in Him" in French. A reminder that our strength, our purpose, our very existence flows from one source: Christ.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-item fade-in-up stagger-delay-2">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>The Mission</h3>
-                    <p>Every piece we create carries Scripture that has transformed lives. Your hoodie becomes a conversation starter. Your tee becomes a testimony.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-item fade-in-up stagger-delay-3">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>The Future</h3>
-                    <p>This is just the beginning. Join us as we clothe the world in faith, one verse at a time.</p>
-                </div>
-            </div>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content fade-in-up">
+            <h2>Faith in Him</h2>
+            <p>Foi en Lui represents more than premium streetwear—it's a declaration of faith. Each piece is crafted to inspire conversations about what matters most: our relationship with Christ.</p>
+            <p>Every design carries Scripture that has transformed lives. Your apparel becomes a testimony, a reminder of God's promises, and a beacon of hope to those around you.</p>
+            <p>Join us in wearing your faith boldly. Because when we trust in Him, all things are possible.</p>
+            <img src="crest-transparent.png" alt="Foi en Lui" class="about-logo">
         </div>
     </section>
 
     <!-- Newsletter -->
-    <section class="newsletter">
+    <section class="newsletter" id="newsletter">
         <div class="newsletter-content fade-in-up">
-            <h2>Join the Family</h2>
-            <p>Be the first to know about new designs, verse drops, and special releases. This isn't just a newsletter—it's a community of faith.</p>
+            <h2>Stay Connected</h2>
+            <p>Be the first to know about new releases, restocks, and exclusive designs. Join our community of believers.</p>
             <form class="newsletter-form">
-                <input type="email" class="newsletter-input" placeholder="Your email address" required>
-                <button type="submit" class="newsletter-btn">Join Us</button>
+                <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
             </form>
         </div>
     </section>
@@ -1019,20 +773,40 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <img src="logo.png" alt="Foi en Lui" class="footer-logo">
-            <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#womens">Women</a>
-                <a href="#mens">Men</a>
-                <a href="#teens">Teens</a>
-                <a href="#story">Our Story</a>
-                <a href="#">Contact</a>
-                <a href="#">Size Guide</a>
-                <a href="#">Returns</a>
+            <div class="footer-brand">
+                <img src="crest-transparent.png" alt="Foi en Lui" class="footer-logo">
+                <p class="footer-tagline">Faith in Him</p>
+                <p>Premium faith-forward apparel</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Foi en Lui. All rights reserved. | Faith in Him</p>
+            <div class="footer-section">
+                <h3>Shop</h3>
+                <ul class="footer-links">
+                    <li><a href="#collection">Men's Collection</a></li>
+                    <li><a href="#womens">Women's (Coming Soon)</a></li>
+                    <li><a href="#teens">Teens (Coming Soon)</a></li>
+                </ul>
             </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul class="footer-links">
+                    <li><a href="https://foienlui.com">foienlui.com</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Foi en Lui. All rights reserved. | Faith in Him</p>
         </div>
     </footer>
 
@@ -1047,13 +821,7 @@
             }
         });
 
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('active');
-        }
-
-        // Intersection Observer for scroll animations
+        // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1069,19 +837,8 @@
 
         // Observe all fade-in elements
         document.addEventListener('DOMContentLoaded', () => {
-            const fadeElements = document.querySelectorAll('.fade-in-up, .scripture-break');
+            const fadeElements = document.querySelectorAll('.fade-in-up');
             fadeElements.forEach(el => observer.observe(el));
-        });
-
-        // Parallax effect for scripture text
-        window.addEventListener('scroll', () => {
-            const scriptureElements = document.querySelectorAll('.scripture-text');
-            const scrolled = window.pageYOffset;
-            
-            scriptureElements.forEach((element, index) => {
-                const rate = scrolled * -0.3;
-                element.style.transform = `translateY(${rate}px)`;
-            });
         });
 
         // Newsletter form handling
@@ -1089,7 +846,7 @@
             e.preventDefault();
             const email = document.querySelector('.newsletter-input').value;
             if (email) {
-                alert('Thank you for joining our community! Keep an eye on your inbox for updates.');
+                alert('Thank you for subscribing! Keep an eye on your inbox for updates.');
                 document.querySelector('.newsletter-input').value = '';
             }
         });
@@ -1101,7 +858,7 @@
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    const offsetTop = targetElement.offsetTop - 80; // Account for fixed nav
+                    const offsetTop = targetElement.offsetTop - 80;
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
@@ -1110,15 +867,10 @@
             });
         });
 
-        // Add subtle hover animations to product cards
-        document.addEventListener('DOMContentLoaded', () => {
-            const productCards = document.querySelectorAll('.compact-product, .teen-card');
-            
-            productCards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.transition = 'all 0.3s ease';
-                });
-            });
+        // Mobile menu (basic functionality - can be expanded)
+        document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
+            // Simple mobile menu toggle - implementation depends on design preference
+            alert('Mobile menu - to be implemented based on final design requirements');
         });
     </script>
 </body>
