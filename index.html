@@ -233,23 +233,23 @@
         }
 
         .shield-logo {
-            width: 300px;
-            height: 300px;
+            width: 250px;
+            height: auto;
             object-fit: contain;
             position: relative;
             z-index: 1;
             filter: drop-shadow(0 0 50px rgba(201, 168, 76, 0.4));
-            animation: shield-rotate 8s linear infinite;
+            animation: shield-breathe 4s ease-in-out infinite;
             transform-style: preserve-3d;
         }
 
-        @keyframes shield-rotate {
-            0% { transform: rotateY(0deg); }
-            100% { transform: rotateY(360deg); }
+        @keyframes shield-breathe {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 50px rgba(201, 168, 76, 0.4)); }
+            50% { transform: scale(1.03); filter: drop-shadow(0 0 70px rgba(201, 168, 76, 0.6)); }
         }
 
         @media (max-width: 768px) {
-            .shield-logo { width: 220px; height: 220px; }
+            .shield-logo { width: 180px; }
             .hero-shield::before { width: 280px; height: 280px; }
         }
 
