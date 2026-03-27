@@ -46,7 +46,7 @@
 ### MEN'S (8 designs) - Bold, Strong, Minimal  
 1. **All Things** | Philippians 4:13 | Black Hoodie | $54.99 ⭐ BESTSELLER
    - BOLD condensed white text, high impact, shield on sleeve
-2. **Courage** | Joshua 1:9 | Charcoal Tee | $29.99
+2. **Courage** | Joshua 1:9 | Dark Grey Heather Tee | $34.99
    - Military-style stencil font, white/cream text
 3. **The Shepherd** | Psalm 23:1 | Military Green Hoodie | $54.99
    - Rugged serif, cream text, shield chest logo  
