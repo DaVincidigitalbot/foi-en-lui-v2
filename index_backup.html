@@ -280,51 +280,17 @@
             border-color: rgba(201, 168, 76, 0.3);
         }
 
-        /* Product Image Flip Effect */
-        .product-image-container {
-            position: relative;
-            perspective: 1000px;
-            width: 100%;
-            aspect-ratio: 2/3;
-            background: var(--grey-800);
-        }
-
         .product-image {
             width: 100%;
-            height: 100%;
+            height: auto;
+            aspect-ratio: 2/3;
             object-fit: contain;
-            position: absolute;
-            top: 0;
-            left: 0;
-            backface-visibility: hidden;
-            transition: transform 0.6s ease;
+            background: var(--grey-800);
+            transition: transform 0.4s ease;
         }
 
-        .product-image.front {
-            z-index: 2;
-        }
-
-        .product-image.back {
-            transform: rotateY(180deg);
-        }
-
-        .product-card:hover .product-image.front {
-            transform: rotateY(-180deg);
-        }
-
-        .product-card:hover .product-image.back {
-            transform: rotateY(0deg);
-        }
-
-        /* Mobile touch support */
-        @media (hover: none) {
-            .product-card.flipped .product-image.front {
-                transform: rotateY(-180deg);
-            }
-
-            .product-card.flipped .product-image.back {
-                transform: rotateY(0deg);
-            }
+        .product-card:hover .product-image {
+            transform: scale(1.05);
         }
 
         .product-info {
@@ -609,6 +575,10 @@
                 margin-bottom: 1rem;
             }
 
+            .product-image {
+                height: auto;
+            }
+
             .product-info {
                 padding: 1.5rem;
             }
@@ -681,10 +651,7 @@
 
         <div class="products-grid">
             <div class="product-card fade-in-up">
-                <div class="product-image-container">
-                    <img src="mens-all-things.png" alt="All Things Hoodie Front" class="product-image front">
-                    <img src="back-all-things.png" alt="All Things Hoodie Back" class="product-image back">
-                </div>
+                <img src="mens-all-things.png" alt="All Things Hoodie" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">ALL THINGS</h3>
                     <p class="product-scripture">Philippians 4:13</p>
@@ -694,10 +661,7 @@
             </div>
 
             <div class="product-card fade-in-up stagger-1">
-                <div class="product-image-container">
-                    <img src="mens-courage.png" alt="Courage Tee Front" class="product-image front">
-                    <img src="back-courage.png" alt="Courage Tee Back" class="product-image back">
-                </div>
+                <img src="mens-courage.png" alt="Courage Tee" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">COURAGE</h3>
                     <p class="product-scripture">Joshua 1:9</p>
@@ -707,10 +671,7 @@
             </div>
 
             <div class="product-card fade-in-up stagger-2">
-                <div class="product-image-container">
-                    <img src="mens-shepherd.png" alt="The Shepherd Hoodie Front" class="product-image front">
-                    <img src="back-shepherd.png" alt="The Shepherd Hoodie Back" class="product-image back">
-                </div>
+                <img src="mens-shepherd.png" alt="The Shepherd Hoodie" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">THE SHEPHERD</h3>
                     <p class="product-scripture">Psalm 23:1</p>
@@ -720,10 +681,7 @@
             </div>
 
             <div class="product-card fade-in-up stagger-3">
-                <div class="product-image-container">
-                    <img src="mens-no-weapon.jpg" alt="No Weapon Tee Front" class="product-image front">
-                    <img src="back-no-weapon.png" alt="No Weapon Tee Back" class="product-image back">
-                </div>
+                <img src="mens-no-weapon.jpg" alt="No Weapon Tee" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">NO WEAPON</h3>
                     <p class="product-scripture">Isaiah 54:17</p>
@@ -733,10 +691,7 @@
             </div>
 
             <div class="product-card fade-in-up stagger-4">
-                <div class="product-image-container">
-                    <img src="mens-walk-by-faith.png" alt="Walk By Faith Tee Front" class="product-image front">
-                    <img src="back-walk-by-faith.png" alt="Walk By Faith Tee Back" class="product-image back">
-                </div>
+                <img src="mens-walk-by-faith.png" alt="Walk By Faith Tee" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">WALK BY FAITH</h3>
                     <p class="product-scripture">2 Corinthians 5:7</p>
@@ -746,10 +701,7 @@
             </div>
 
             <div class="product-card fade-in-up stagger-1">
-                <div class="product-image-container">
-                    <img src="mens-armor-of-god.png" alt="Armor of God Hoodie Front" class="product-image front">
-                    <img src="back-armor-of-god.png" alt="Armor of God Hoodie Back" class="product-image back">
-                </div>
+                <img src="mens-armor-of-god.png" alt="Armor of God Hoodie" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">ARMOR OF GOD</h3>
                     <p class="product-scripture">Ephesians 6:11</p>
@@ -759,10 +711,7 @@
             </div>
 
             <div class="product-card fade-in-up stagger-2">
-                <div class="product-image-container">
-                    <img src="mens-unshaken.png" alt="Unshaken Tee Front" class="product-image front">
-                    <img src="back-unshaken.png" alt="Unshaken Tee Back" class="product-image back">
-                </div>
+                <img src="mens-unshaken.png" alt="Unshaken Tee" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">UNSHAKEN</h3>
                     <p class="product-scripture">Psalm 16:8</p>
@@ -772,10 +721,7 @@
             </div>
 
             <div class="product-card fade-in-up stagger-3">
-                <div class="product-image-container">
-                    <img src="mens-the-way.png" alt="The Way Tee Front" class="product-image front">
-                    <img src="back-the-way.png" alt="The Way Tee Back" class="product-image back">
-                </div>
+                <img src="mens-the-way.png" alt="The Way Tee" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">THE WAY</h3>
                     <p class="product-scripture">John 14:6</p>
@@ -795,10 +741,7 @@
 
         <div class="products-grid">
             <div class="product-card fade-in-up">
-                <div class="product-image-container">
-                    <img src="womens-strength-dignity.png" alt="Strength & Dignity Hoodie Front" class="product-image front">
-                    <img src="back-strength-dignity.png" alt="Strength & Dignity Hoodie Back" class="product-image back">
-                </div>
+                <img src="womens-strength-dignity.png" alt="Strength & Dignity Hoodie" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">STRENGTH & DIGNITY</h3>
                     <p class="product-scripture">Proverbs 31:25</p>
@@ -808,10 +751,7 @@
             </div>
 
             <div class="product-card fade-in-up stagger-1">
-                <div class="product-image-container">
-                    <img src="womens-be-still.png" alt="Be Still Tee Front" class="product-image front">
-                    <img src="back-be-still.png" alt="Be Still Tee Back" class="product-image back">
-                </div>
+                <img src="womens-be-still.png" alt="Be Still Tee" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">BE STILL</h3>
                     <p class="product-scripture">Psalm 46:10</p>
@@ -821,10 +761,7 @@
             </div>
 
             <div class="product-card fade-in-up stagger-2">
-                <div class="product-image-container">
-                    <img src="womens-the-plan.png" alt="The Plan Hoodie Front" class="product-image front">
-                    <img src="back-the-plan.png" alt="The Plan Hoodie Back" class="product-image back">
-                </div>
+                <img src="womens-the-plan.png" alt="The Plan Hoodie" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">THE PLAN</h3>
                     <p class="product-scripture">Jeremiah 29:11</p>
@@ -834,10 +771,7 @@
             </div>
 
             <div class="product-card fade-in-up stagger-3">
-                <div class="product-image-container">
-                    <img src="womens-fearfully-made.png" alt="Fearfully Made Tee Front" class="product-image front">
-                    <img src="back-fearfully-made.png" alt="Fearfully Made Tee Back" class="product-image back">
-                </div>
+                <img src="womens-fearfully-made.png" alt="Fearfully Made Tee" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">FEARFULLY MADE</h3>
                     <p class="product-scripture">Psalm 139:14</p>
@@ -847,10 +781,7 @@
             </div>
 
             <div class="product-card fade-in-up stagger-4">
-                <div class="product-image-container">
-                    <img src="womens-joyful.png" alt="Joyful Hoodie Front" class="product-image front">
-                    <img src="back-joyful.png" alt="Joyful Hoodie Back" class="product-image back">
-                </div>
+                <img src="womens-joyful.png" alt="Joyful Hoodie" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">JOYFUL</h3>
                     <p class="product-scripture">Nehemiah 8:10</p>
@@ -860,10 +791,7 @@
             </div>
 
             <div class="product-card fade-in-up stagger-1">
-                <div class="product-image-container">
-                    <img src="womens-shine.png" alt="Shine Tee Front" class="product-image front">
-                    <img src="back-shine.png" alt="Shine Tee Back" class="product-image back">
-                </div>
+                <img src="womens-shine.png" alt="Shine Tee" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">SHINE</h3>
                     <p class="product-scripture">Matthew 5:16</p>
@@ -873,10 +801,7 @@
             </div>
 
             <div class="product-card fade-in-up stagger-2">
-                <div class="product-image-container">
-                    <img src="womens-chosen.png" alt="Chosen Tee Front" class="product-image front">
-                    <img src="back-chosen.png" alt="Chosen Tee Back" class="product-image back">
-                </div>
+                <img src="womens-chosen.png" alt="Chosen Tee" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">CHOSEN</h3>
                     <p class="product-scripture">1 Peter 2:9</p>
@@ -886,10 +811,7 @@
             </div>
 
             <div class="product-card fade-in-up stagger-3">
-                <div class="product-image-container">
-                    <img src="womens-grace.png" alt="Grace Upon Grace Hoodie Front" class="product-image front">
-                    <img src="back-grace.png" alt="Grace Upon Grace Hoodie Back" class="product-image back">
-                </div>
+                <img src="womens-grace.png" alt="Grace Upon Grace Hoodie" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">GRACE UPON GRACE</h3>
                     <p class="product-scripture">John 1:16</p>
@@ -909,10 +831,7 @@
 
         <div class="products-grid">
             <div class="product-card fade-in-up">
-                <div class="product-image-container">
-                    <img src="teens-nothing-impossible.png" alt="Nothing Impossible Hoodie Front" class="product-image front">
-                    <img src="back-nothing-impossible.png" alt="Nothing Impossible Hoodie Back" class="product-image back">
-                </div>
+                <img src="teens-nothing-impossible.png" alt="Nothing Impossible Hoodie" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">NOTHING IMPOSSIBLE</h3>
                     <p class="product-scripture">Luke 1:37</p>
@@ -922,10 +841,7 @@
             </div>
 
             <div class="product-card fade-in-up stagger-1">
-                <div class="product-image-container">
-                    <img src="teens-trust.png" alt="Trust Tee Front" class="product-image front">
-                    <img src="back-trust.png" alt="Trust Tee Back" class="product-image back">
-                </div>
+                <img src="teens-trust.png" alt="Trust Tee" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">TRUST</h3>
                     <p class="product-scripture">Proverbs 3:5</p>
@@ -935,10 +851,7 @@
             </div>
 
             <div class="product-card fade-in-up stagger-2">
-                <div class="product-image-container">
-                    <img src="teens-shine.png" alt="Shine Tee Front" class="product-image front">
-                    <img src="back-shine-teen.png" alt="Shine Tee Back" class="product-image back">
-                </div>
+                <img src="teens-shine.png" alt="Shine Tee" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">SHINE</h3>
                     <p class="product-scripture">Matthew 5:16</p>
@@ -948,10 +861,7 @@
             </div>
 
             <div class="product-card fade-in-up stagger-3">
-                <div class="product-image-container">
-                    <img src="teens-brave.png" alt="Brave Hoodie Front" class="product-image front">
-                    <img src="back-brave.png" alt="Brave Hoodie Back" class="product-image back">
-                </div>
+                <img src="teens-brave.png" alt="Brave Hoodie" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">BRAVE</h3>
                     <p class="product-scripture">Deuteronomy 31:6</p>
@@ -961,10 +871,7 @@
             </div>
 
             <div class="product-card fade-in-up stagger-4">
-                <div class="product-image-container">
-                    <img src="teens-beloved.png" alt="Beloved Tee Front" class="product-image front">
-                    <img src="back-beloved.png" alt="Beloved Tee Back" class="product-image back">
-                </div>
+                <img src="teens-beloved.png" alt="Beloved Tee" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">BELOVED</h3>
                     <p class="product-scripture">Romans 9:25</p>
@@ -974,10 +881,7 @@
             </div>
 
             <div class="product-card fade-in-up stagger-1">
-                <div class="product-image-container">
-                    <img src="teens-redeemed.png" alt="Redeemed Hoodie Front" class="product-image front">
-                    <img src="back-redeemed.png" alt="Redeemed Hoodie Back" class="product-image back">
-                </div>
+                <img src="teens-redeemed.png" alt="Redeemed Hoodie" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">REDEEMED</h3>
                     <p class="product-scripture">Psalm 107:2</p>
@@ -987,10 +891,7 @@
             </div>
 
             <div class="product-card fade-in-up stagger-2">
-                <div class="product-image-container">
-                    <img src="teens-never-forsaken.png" alt="Never Forsaken Tee Front" class="product-image front">
-                    <img src="back-never-forsaken.png" alt="Never Forsaken Tee Back" class="product-image back">
-                </div>
+                <img src="teens-never-forsaken.png" alt="Never Forsaken Tee" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">NEVER FORSAKEN</h3>
                     <p class="product-scripture">Deuteronomy 31:8</p>
@@ -1000,10 +901,7 @@
             </div>
 
             <div class="product-card fade-in-up stagger-3">
-                <div class="product-image-container">
-                    <img src="teens-light-of-world.png" alt="Light of the World Tee Front" class="product-image front">
-                    <img src="back-light-of-world.png" alt="Light of the World Tee Back" class="product-image back">
-                </div>
+                <img src="teens-light-of-world.png" alt="Light of the World Tee" class="product-image">
                 <div class="product-info">
                     <h3 class="product-name">LIGHT OF THE WORLD</h3>
                     <p class="product-scripture">John 8:12</p>
@@ -1102,21 +1000,10 @@
             });
         }, observerOptions);
 
-        // Mobile touch support for image flip
+        // Observe all fade-in elements
         document.addEventListener('DOMContentLoaded', () => {
             const fadeElements = document.querySelectorAll('.fade-in-up');
             fadeElements.forEach(el => observer.observe(el));
-
-            // Add touch support for mobile devices
-            const productCards = document.querySelectorAll('.product-card');
-            productCards.forEach(card => {
-                card.addEventListener('click', () => {
-                    // Only for touch devices (no hover support)
-                    if (window.matchMedia('(hover: none)').matches) {
-                        card.classList.toggle('flipped');
-                    }
-                });
-            });
         });
 
         // Newsletter form handling
@@ -1152,4 +1039,4 @@
         });
     </script>
 </body>
-</html><!-- cache bust 1737947330 -->
+</html><!-- cache bust 1773896885 -->
