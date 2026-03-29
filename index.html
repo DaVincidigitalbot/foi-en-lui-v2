@@ -387,14 +387,16 @@
         .product-image-container {
             position: relative;
             width: 100%;
-            height: 300px;
+            aspect-ratio: 2 / 3;
             overflow: hidden;
+            background: var(--grey-700);
         }
 
         .product-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: top center;
             transition: opacity 0.3s ease;
         }
 
@@ -404,9 +406,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            object-position: center center;
             opacity: 0;
             transition: opacity 0.3s ease;
+            background: var(--navy);
         }
 
         .product-card:hover .product-image-back {
@@ -722,8 +726,24 @@
             }
 
             .product-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .product-image-container {
+                aspect-ratio: 2 / 3;
+            }
+
+            .product-info {
+                padding: 16px;
+            }
+
+            .product-name {
+                font-size: 16px;
+            }
+
+            .product-price {
+                font-size: 16px;
             }
 
             .about-content {
@@ -753,6 +773,11 @@
 
             .product-grid {
                 grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .product-image-container {
+                aspect-ratio: 3 / 4;
             }
 
             .hero-logo {
