@@ -3,387 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foi en Lui - Faith in Him | Premium Faith-Based Streetwear</title>
-    
-    <!-- Google Fonts -->
+    <title>Foi en Lui — Faith Is Not Quiet</title>
+    <meta name="description" content="Premium faith-forward streetwear. Built for those who walk into pressure anchored in Him.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <style>
         :root {
             --navy: #0a0a0f;
             --gold: #C9A84C;
+            --gold-muted: #B8A070;
             --bone: #E8E6E1;
             --white: #FFFFFF;
-            --grey-900: #0a0a0f;
-            --grey-800: #1a1a1a;
-            --grey-700: #2a2a2a;
-            --grey-600: #404040;
-            --grey-400: #666666;
+            --grey-900: #111114;
+            --grey-800: #1a1a1e;
+            --grey-700: #252528;
+            --grey-600: #404044;
+            --grey-400: #8a8a8e;
             --grey-200: #e5e5e5;
-            --serif: 'Cormorant Garamond', serif;
-            --sans: 'Inter', sans-serif;
+            --serif: 'Cormorant Garamond', Georgia, serif;
+            --sans: 'Inter', -apple-system, sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: var(--sans);
-            line-height: 1.6;
-            color: var(--bone);
+            color: var(--white);
             background: var(--navy);
+            line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Announcement Bar */
-        .announcement-bar {
-            background: var(--gold);
-            color: var(--navy);
-            text-align: center;
-            padding: 12px 0;
-            font-weight: 600;
-            font-size: 14px;
-            position: relative;
-            z-index: 1001;
-        }
-
-        /* Navigation */
-        .navbar {
+        /* ============ NAVIGATION ============ */
+        .nav {
             position: fixed;
-            top: 48px;
-            left: 0;
-            right: 0;
-            background: rgba(10, 10, 15, 0.95);
-            backdrop-filter: blur(20px);
+            top: 0; left: 0; right: 0;
             z-index: 1000;
-            padding: 15px 0;
-            transition: all 0.3s ease;
+            padding: 20px 0;
+            transition: all 0.4s ease;
         }
-
-        .navbar.scrolled {
-            top: 0;
-            background: rgba(10, 10, 15, 0.98);
+        .nav.scrolled {
+            backdrop-filter: blur(20px);
+            background: rgba(10,10,15,0.92);
+            border-bottom: 1px solid rgba(201,168,76,0.08);
+            padding: 14px 0;
         }
-
-        .nav-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        .nav-inner {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-
         .nav-brand {
             display: flex;
             align-items: center;
             gap: 12px;
             text-decoration: none;
         }
-
         .nav-logo {
-            width: 40px;
-            height: 40px;
+            height: 36px;
+            width: auto;
         }
-
-        .nav-brand-text {
+        .nav-wordmark {
             font-family: var(--serif);
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 600;
-            color: var(--bone);
-            letter-spacing: 2px;
+            color: var(--white);
+            letter-spacing: 3px;
         }
-
         .nav-links {
             display: flex;
+            gap: 36px;
             list-style: none;
-            gap: 40px;
         }
-
         .nav-links a {
-            color: var(--bone);
+            color: var(--grey-400);
             text-decoration: none;
+            font-size: 13px;
             font-weight: 500;
-            font-size: 15px;
-            transition: color 0.3s ease;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s;
         }
-
-        .nav-links a:hover {
-            color: var(--gold);
-        }
+        .nav-links a:hover { color: var(--white); }
 
         .nav-toggle {
             display: none;
             background: none;
             border: none;
-            color: var(--bone);
+            color: var(--white);
             font-size: 24px;
             cursor: pointer;
+            padding: 8px;
         }
 
-        /* Mobile Navigation */
+        /* Mobile Nav */
         .mobile-nav {
             position: fixed;
-            top: 0;
-            right: -100%;
-            width: 300px;
+            top: 0; right: -100%;
+            width: 280px;
             height: 100vh;
-            background: var(--navy);
+            background: var(--grey-900);
             z-index: 2000;
             transition: right 0.3s ease;
-            padding: 80px 40px;
+            padding: 80px 32px 32px;
         }
-
-        .mobile-nav.active {
-            right: 0;
-        }
-
-        .mobile-nav-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .mobile-nav-links a {
-            color: var(--bone);
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 500;
-            display: block;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--grey-700);
-        }
-
+        .mobile-nav.active { right: 0; }
         .mobile-nav-close {
             position: absolute;
-            top: 30px;
-            right: 30px;
+            top: 24px; right: 24px;
             background: none;
             border: none;
-            color: var(--bone);
-            font-size: 30px;
+            color: var(--white);
+            font-size: 28px;
             cursor: pointer;
         }
-
-        .mobile-nav-overlay {
+        .mobile-nav a {
+            display: block;
+            color: var(--grey-400);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: color 0.3s;
+        }
+        .mobile-nav a:hover { color: var(--gold); }
+        .mobile-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
             z-index: 1999;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
+            display: none;
         }
+        .mobile-overlay.active { display: block; }
 
-        .mobile-nav-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Hero Section */
+        /* ============ HERO ============ */
         .hero {
+            position: relative;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--navy) 0%, #1a1a2e  100%);
-            position: relative;
             overflow: hidden;
         }
-
-        .hero::before {
-            content: '';
+        .hero-bg {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23C9A84C" fill-opacity="0.05"><circle cx="30" cy="30" r="1"/></g></g></svg>');
-            animation: float 20s ease-in-out infinite;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, var(--navy) 0%, #12121a 50%, #0d0d14 100%);
         }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+        .hero-img {
+            position: absolute;
+            right: 0; top: 0;
+            width: 50%; height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            opacity: 0.4;
+            mask-image: linear-gradient(to left, rgba(0,0,0,0.6) 0%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.6) 0%, transparent 100%);
         }
-
         .hero-content {
-            text-align: center;
             position: relative;
             z-index: 2;
-        }
-
-        .hero-logo {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 40px;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.3s forwards;
-        }
-
-        .hero-title {
-            font-family: var(--serif);
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 700;
-            letter-spacing: 4px;
-            margin-bottom: 20px;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.6s forwards;
-        }
-
-        .hero-subtitle {
-            font-size: 24px;
-            color: var(--gold);
-            margin-bottom: 40px;
-            font-weight: 300;
-            letter-spacing: 2px;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.9s forwards;
-        }
-
-        .hero-cta {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--navy);
-            padding: 15px 40px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            opacity: 0;
-            animation: fadeInUp 1s ease 1.2s forwards;
-        }
-
-        .hero-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Trust Bar */
-        .trust-bar {
-            background: var(--grey-800);
-            padding: 20px 0;
-            text-align: center;
-            color: var(--gold);
-            font-weight: 500;
-            font-size: 14px;
-            letter-spacing: 1px;
-        }
-
-        /* Collection Sections */
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title {
-            font-family: var(--serif);
-            font-size: 3rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--bone);
-        }
-
-        .section-subtitle {
-            font-size: 18px;
-            color: var(--gold);
-            max-width: 600px;
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 24px;
             margin: 0 auto;
         }
-
-        /* Collection Tabs */
-        .collection-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-bottom: 60px;
-            border-bottom: 1px solid var(--grey-700);
+        .hero-crest {
+            width: 64px;
+            height: auto;
+            margin-bottom: 40px;
+            opacity: 0.7;
         }
-
-        .tab-button {
-            background: none;
-            border: none;
+        .hero-headline {
+            font-family: var(--serif);
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 700;
+            line-height: 1.05;
+            color: var(--white);
+            margin-bottom: 24px;
+            max-width: 600px;
+        }
+        .hero-headline em {
+            font-style: normal;
+            color: var(--gold);
+        }
+        .hero-sub {
+            font-size: clamp(1rem, 2vw, 1.2rem);
             color: var(--grey-400);
-            font-size: 18px;
-            font-weight: 500;
-            padding: 20px 0;
-            cursor: pointer;
-            position: relative;
-            transition: color 0.3s ease;
+            max-width: 480px;
+            margin-bottom: 48px;
+            font-weight: 300;
+            line-height: 1.7;
         }
-
-        .tab-button.active {
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            border: 1.5px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+        }
+        .btn:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+        .btn-solid {
+            background: var(--gold);
+            color: var(--navy);
+        }
+        .btn-solid:hover {
+            background: transparent;
             color: var(--gold);
         }
 
-        .tab-button.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: var(--gold);
+        /* ============ SECTION BASICS ============ */
+        .section {
+            padding: 120px 24px;
+        }
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .section-title {
+            font-family: var(--serif);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 48px;
         }
 
-        /* Product Grid */
+        /* ============ BEST SELLERS ============ */
+        .bestsellers { background: var(--navy); }
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-bottom: 80px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
         }
-
         .product-card {
             background: var(--grey-800);
-            border-radius: 12px;
+            border-radius: 8px;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            opacity: 0;
-            animation: fadeInUp 0.6s ease forwards;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border: 1px solid rgba(255,255,255,0.04);
         }
-
         .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
         }
-
         .product-image-container {
             position: relative;
             width: 100%;
@@ -391,1103 +279,862 @@
             overflow: hidden;
             background: var(--grey-700);
         }
-
         .product-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: top center;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.4s ease;
         }
-
         .product-image-back {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             object-fit: contain;
-            object-position: center center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            object-position: center;
             background: var(--navy);
-        }
-
-        .product-card:hover .product-image-back {
-            opacity: 1;
-        }
-
-        .product-card:hover .product-image {
             opacity: 0;
+            transition: opacity 0.4s ease;
         }
-
+        .product-card:hover .product-image { opacity: 0; }
+        .product-card:hover .product-image-back { opacity: 1; }
         .product-info {
-            padding: 24px;
+            padding: 20px;
         }
-
         .product-name {
             font-family: var(--serif);
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--bone);
+            color: var(--white);
+            margin-bottom: 4px;
         }
-
         .product-scripture {
-            font-size: 14px;
-            color: var(--gold);
-            margin-bottom: 8px;
-            font-style: italic;
-        }
-
-        .product-type {
-            font-size: 14px;
+            font-size: 12px;
             color: var(--grey-400);
-            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
         }
-
+        .product-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
         .product-price {
             font-size: 18px;
             font-weight: 600;
-            color: var(--bone);
-            margin-bottom: 16px;
+            color: var(--gold);
         }
-
-        .product-cta {
-            width: 100%;
-            background: var(--gold);
-            color: var(--navy);
-            border: none;
-            padding: 12px 20px;
+        .product-btn {
+            font-size: 10px;
             font-weight: 600;
-            font-size: 14px;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .product-cta:hover {
-            background: #b8994a;
-            transform: translateY(-1px);
-        }
-
-        /* Collection Content */
-        .collection-content {
-            display: none;
-        }
-
-        .collection-content.active {
-            display: block;
-        }
-
-        /* About Section */
-        .about {
-            background: var(--grey-800);
-            padding: 100px 0;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-family: var(--serif);
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            color: var(--bone);
-        }
-
-        .about-text p {
-            font-size: 16px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            color: var(--grey-200);
-        }
-
-        .about-image {
-            text-align: center;
-        }
-
-        .about-image img {
-            width: 200px;
-            height: 200px;
-            object-fit: contain;
-        }
-
-        /* Newsletter Section */
-        .newsletter {
-            background: linear-gradient(135deg, var(--navy) 0%, #1a1a2e 100%);
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .newsletter h2 {
-            font-family: var(--serif);
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--bone);
-        }
-
-        .newsletter p {
-            font-size: 18px;
-            color: var(--grey-200);
-            margin-bottom: 40px;
-        }
-
-        .newsletter-form {
-            max-width: 400px;
-            margin: 0 auto;
-            display: flex;
-            gap: 15px;
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: 15px 20px;
-            border: none;
-            border-radius: 50px;
-            background: var(--grey-700);
-            color: var(--bone);
-            font-size: 16px;
-        }
-
-        .newsletter-input::placeholder {
-            color: var(--grey-400);
-        }
-
-        .newsletter-submit {
-            background: var(--gold);
-            color: var(--navy);
-            border: none;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .newsletter-submit:hover {
-            background: #b8994a;
-        }
-
-        .newsletter-message {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 8px;
-            display: none;
-        }
-
-        .newsletter-message.success {
-            background: rgba(40, 167, 69, 0.2);
-            border: 1px solid rgba(40, 167, 69, 0.3);
-            color: #28a745;
-        }
-
-        .newsletter-message.error {
-            background: rgba(220, 53, 69, 0.2);
-            border: 1px solid rgba(220, 53, 69, 0.3);
-            color: #dc3545;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--grey-900);
-            padding: 60px 0 30px;
-            border-top: 1px solid var(--grey-700);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-section h3 {
-            font-family: var(--serif);
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: var(--bone);
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section li {
-            margin-bottom: 10px;
-        }
-
-        .footer-section a {
+            letter-spacing: 2px;
+            text-transform: uppercase;
             color: var(--grey-400);
             text-decoration: none;
-            transition: color 0.3s ease;
+            padding: 8px 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        .product-btn:hover {
+            color: var(--gold);
+            border-color: var(--gold);
         }
 
-        .footer-section a:hover {
+        /* ============ BRAND STATEMENT ============ */
+        .brand-statement {
+            background: var(--grey-900);
+            text-align: center;
+        }
+        .brand-statement-text {
+            font-family: var(--serif);
+            font-size: clamp(1.4rem, 3vw, 2.2rem);
+            font-weight: 400;
+            color: var(--bone);
+            max-width: 720px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .brand-statement-text em {
+            font-style: italic;
+            color: var(--gold);
+        }
+        .brand-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--gold-muted);
+            margin: 40px auto;
+            opacity: 0.5;
+        }
+        .brand-statement-sub {
+            font-size: 15px;
+            color: var(--grey-400);
+            max-width: 560px;
+            margin: 0 auto;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* ============ COLLECTIONS GRID ============ */
+        .collections { background: var(--navy); }
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .collection-tile {
+            position: relative;
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .collection-tile img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            transition: transform 0.6s ease, filter 0.6s ease;
+            filter: brightness(0.6);
+        }
+        .collection-tile:hover img {
+            transform: scale(1.05);
+            filter: brightness(0.4);
+        }
+        .collection-label {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 32px 24px;
+            z-index: 2;
+        }
+        .collection-label h3 {
+            font-family: var(--serif);
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+        .collection-label span {
+            font-size: 12px;
+            color: var(--grey-400);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* ============ FEATURED PRODUCT ============ */
+        .featured { background: var(--grey-900); }
+        .featured-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .featured-image {
+            aspect-ratio: 3 / 4;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .featured-image img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+        .featured-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .featured-name {
+            font-family: var(--serif);
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+        .featured-tagline {
+            font-family: var(--serif);
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--gold-muted);
+            margin-bottom: 24px;
+        }
+        .featured-scripture {
+            font-size: 13px;
+            color: var(--grey-400);
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+        }
+        .featured-desc {
+            font-size: 16px;
+            color: var(--grey-400);
+            line-height: 1.8;
+            margin-bottom: 12px;
+            font-weight: 300;
+        }
+        .featured-details {
+            font-size: 13px;
+            color: var(--grey-600);
+            margin-bottom: 40px;
+            letter-spacing: 0.5px;
+        }
+
+        /* ============ WHY SECTION ============ */
+        .why { background: var(--navy); text-align: center; }
+        .why-text {
+            font-family: var(--serif);
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            color: var(--bone);
+            max-width: 640px;
+            margin: 0 auto 48px;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+        .why-text strong {
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        /* ============ SOCIAL PROOF ============ */
+        .proof {
+            background: var(--grey-900);
+            text-align: center;
+            padding: 80px 24px;
+        }
+        .proof-quote {
+            font-family: var(--serif);
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-style: italic;
+            color: var(--grey-400);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ============ FINAL CTA ============ */
+        .final-cta {
+            background: var(--navy);
+            text-align: center;
+            padding: 120px 24px;
+        }
+        .final-cta-text {
+            font-family: var(--serif);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 40px;
+        }
+        .final-cta-text em {
+            font-style: normal;
             color: var(--gold);
         }
 
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid var(--grey-700);
+        /* ============ ALL PRODUCTS (HIDDEN, SCROLLED TO) ============ */
+        .all-products { background: var(--grey-900); }
+        .collection-tabs {
+            display: flex;
+            gap: 0;
+            margin-bottom: 48px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .tab-btn {
+            background: none;
+            border: none;
             color: var(--grey-400);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 16px 32px;
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s;
+        }
+        .tab-btn.active { color: var(--gold); }
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px; left: 0; right: 0;
+            height: 2px;
+            background: var(--gold);
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .full-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        /* ============ FOOTER ============ */
+        .footer {
+            background: var(--grey-800);
+            padding: 80px 24px 32px;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+        }
+        .footer-brand-text {
             font-size: 14px;
+            color: var(--grey-400);
+            line-height: 1.7;
+            margin-top: 16px;
+        }
+        .footer h4 {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+        .footer a {
+            display: block;
+            color: var(--grey-400);
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 12px;
+            transition: color 0.3s;
+        }
+        .footer a:hover { color: var(--gold); }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 48px auto 0;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            text-align: center;
+            font-size: 13px;
+            color: var(--grey-600);
         }
 
-        /* Modal */
-        .modal {
-            display: none;
+        /* ============ ANIMATIONS ============ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============ MODALS ============ */
+        .modal-overlay {
             position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
             z-index: 3000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
         }
-
-        .modal-content {
-            background-color: var(--grey-800);
-            margin: 10% auto;
+        .modal-overlay.active { display: flex; }
+        .modal {
+            background: var(--grey-800);
+            max-width: 500px;
+            width: 90%;
             padding: 40px;
             border-radius: 12px;
-            width: 90%;
-            max-width: 600px;
             position: relative;
+            max-height: 80vh;
+            overflow-y: auto;
         }
-
+        .modal h2 {
+            font-family: var(--serif);
+            font-size: 24px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        .modal h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--white);
+            margin: 16px 0 8px;
+            letter-spacing: 1px;
+        }
+        .modal p {
+            font-size: 14px;
+            color: var(--grey-400);
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
         .modal-close {
             position: absolute;
-            top: 20px;
-            right: 25px;
+            top: 16px; right: 20px;
+            background: none;
+            border: none;
             color: var(--grey-400);
-            font-size: 30px;
-            font-weight: bold;
+            font-size: 24px;
             cursor: pointer;
         }
 
-        .modal-close:hover {
-            color: var(--bone);
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 1024px) {
+            .full-grid { grid-template-columns: repeat(3, 1fr); }
+            .featured-inner { gap: 40px; }
         }
 
-        .modal h2 {
-            font-family: var(--serif);
-            margin-bottom: 20px;
-            color: var(--bone);
-        }
-
-        .modal p {
-            margin-bottom: 15px;
-            color: var(--grey-200);
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
+            .nav-links { display: none; }
+            .nav-toggle { display: block; }
 
-            .nav-toggle {
-                display: block;
-            }
+            .hero { min-height: 90vh; }
+            .hero-img { width: 100%; opacity: 0.2; }
+            .hero-content { text-align: center; }
+            .hero-crest { margin: 0 auto 32px; }
+            .hero-headline { margin: 0 auto 20px; }
+            .hero-sub { margin: 0 auto 40px; }
 
-            .hero-title {
-                font-size: 2.5rem;
-            }
+            .product-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+            .product-info { padding: 16px; }
+            .product-name { font-size: 15px; }
+            .product-price { font-size: 16px; }
+            .product-btn { display: none; }
 
-            .hero-subtitle {
-                font-size: 18px;
-            }
+            .collections-grid { grid-template-columns: 1fr; gap: 12px; }
+            .collection-tile { aspect-ratio: 16 / 9; }
 
-            .collection-tabs {
-                flex-direction: column;
-                gap: 20px;
-                border: none;
-            }
+            .featured-inner { grid-template-columns: 1fr; gap: 32px; }
 
-            .tab-button {
-                background: var(--grey-700);
-                border-radius: 8px;
-                padding: 15px;
-            }
+            .full-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
 
-            .tab-button.active {
-                background: var(--gold);
-                color: var(--navy);
-            }
+            .collection-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .tab-btn { padding: 14px 20px; white-space: nowrap; font-size: 11px; }
 
-            .tab-button.active::after {
-                display: none;
-            }
+            .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
 
-            .product-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 16px;
-            }
-
-            .product-image-container {
-                aspect-ratio: 2 / 3;
-            }
-
-            .product-info {
-                padding: 16px;
-            }
-
-            .product-name {
-                font-size: 16px;
-            }
-
-            .product-price {
-                font-size: 16px;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .modal-content {
-                margin: 5% auto;
-                padding: 30px 20px;
-            }
+            .section { padding: 80px 20px; }
         }
 
         @media (max-width: 480px) {
-            .container {
-                padding: 0 15px;
-            }
+            .product-grid { grid-template-columns: 1fr; gap: 20px; }
+            .product-image-container { aspect-ratio: 3 / 4; }
+            .product-btn { display: inline-block; }
 
-            .product-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
+            .full-grid { grid-template-columns: 1fr; gap: 16px; }
 
-            .product-image-container {
-                aspect-ratio: 3 / 4;
-            }
-
-            .hero-logo {
-                width: 100px;
-                height: 100px;
-            }
+            .footer-inner { grid-template-columns: 1fr; gap: 24px; text-align: center; }
         }
     </style>
 </head>
 <body>
-    <!-- Announcement Bar -->
-    <div class="announcement-bar">
-        🚀 FREE SHIPPING ON ORDERS $75+
-    </div>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
+    <!-- NAVIGATION -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
             <a href="#" class="nav-brand">
                 <img src="crest-transparent.jpg" alt="Foi en Lui" class="nav-logo">
-                <span class="nav-brand-text">FOI EN LUI</span>
+                <span class="nav-wordmark">FOI EN LUI</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#shop">Shop</a></li>
-                <li><a href="#mens">Men's</a></li>
-                <li><a href="#womens">Women's</a></li>
-                <li><a href="#teens">Teens</a></li>
+                <li><a href="#bestsellers">Shop</a></li>
+                <li><a href="#collections">Collections</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#all-products">All Products</a></li>
             </ul>
-            <button class="nav-toggle" id="nav-toggle">☰</button>
+            <button class="nav-toggle" onclick="toggleMobileNav()">&#9776;</button>
         </div>
     </nav>
 
-    <!-- Mobile Navigation -->
-    <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
-    <nav class="mobile-nav" id="mobile-nav">
-        <button class="mobile-nav-close" id="mobile-nav-close">×</button>
-        <ul class="mobile-nav-links">
-            <li><a href="#shop" onclick="closeMobileNav()">Shop</a></li>
-            <li><a href="#mens" onclick="closeMobileNav()">Men's</a></li>
-            <li><a href="#womens" onclick="closeMobileNav()">Women's</a></li>
-            <li><a href="#teens" onclick="closeMobileNav()">Teens</a></li>
-            <li><a href="#about" onclick="closeMobileNav()">About</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <img src="crest-transparent.jpg" alt="Foi en Lui Crest" class="hero-logo">
-            <h1 class="hero-title">FOI EN LUI</h1>
-            <p class="hero-subtitle">Faith in Him</p>
-            <a href="#shop" class="hero-cta">Shop Collection</a>
-        </div>
-    </section>
-
-    <!-- Trust Bar -->
-    <div class="trust-bar">
-        Premium Quality • Scripture-Inspired • Made with Purpose
+    <!-- MOBILE NAV -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileNav()"></div>
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" onclick="toggleMobileNav()">&times;</button>
+        <a href="#bestsellers" onclick="toggleMobileNav()">Shop</a>
+        <a href="#collections" onclick="toggleMobileNav()">Collections</a>
+        <a href="#featured" onclick="toggleMobileNav()">Featured</a>
+        <a href="#about" onclick="toggleMobileNav()">About</a>
+        <a href="#all-products" onclick="toggleMobileNav()">All Products</a>
     </div>
 
-    <!-- Shop Section -->
-    <section class="section" id="shop">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Collections</h2>
-                <p class="section-subtitle">Faith-driven designs for every believer</p>
-            </div>
+    <!-- SECTION 1: HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <img src="mens-no-weapon.jpg" alt="" class="hero-img" loading="eager">
+        <div class="hero-content">
+            <img src="crest-transparent.jpg" alt="" class="hero-crest">
+            <h1 class="hero-headline">FAITH IS NOT <em>QUIET.</em></h1>
+            <p class="hero-sub">Built for those who walk into pressure anchored in Him.</p>
+            <a href="#bestsellers" class="btn">Shop the Collection</a>
+        </div>
+    </section>
 
-            <!-- Collection Tabs -->
+    <!-- SECTION 2: BEST SELLERS -->
+    <section class="section bestsellers" id="bestsellers">
+        <div class="section-inner">
+            <p class="section-label reveal">First Drop</p>
+            <h2 class="section-title reveal">The Collection</h2>
+            <div class="product-grid">
+                <div class="product-card reveal">
+                    <div class="product-image-container">
+                        <img src="mens-no-weapon.jpg" alt="NO WEAPON" class="product-image" loading="lazy">
+                        <img src="back-no-weapon.png" alt="NO WEAPON Back" class="product-image-back" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">NO WEAPON</h3>
+                        <p class="product-scripture">Isaiah 54:17</p>
+                        <div class="product-bottom">
+                            <span class="product-price">$34.99</span>
+                            <a href="#all-products" class="product-btn">Shop</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card reveal">
+                    <div class="product-image-container">
+                        <img src="mens-courage-front.jpg" alt="COURAGE" class="product-image" loading="lazy">
+                        <img src="mens-courage-back.jpg" alt="COURAGE Back" class="product-image-back" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">COURAGE</h3>
+                        <p class="product-scripture">Joshua 1:9</p>
+                        <div class="product-bottom">
+                            <span class="product-price">$34.99</span>
+                            <a href="#all-products" class="product-btn">Shop</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card reveal">
+                    <div class="product-image-container">
+                        <img src="mens-armor-of-god.jpg" alt="ARMOR OF GOD" class="product-image" loading="lazy">
+                        <img src="back-armor-of-god.png" alt="ARMOR OF GOD Back" class="product-image-back" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">ARMOR OF GOD</h3>
+                        <p class="product-scripture">Ephesians 6:11</p>
+                        <div class="product-bottom">
+                            <span class="product-price">$49.99</span>
+                            <a href="#all-products" class="product-btn">Shop</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card reveal">
+                    <div class="product-image-container">
+                        <img src="womens-strength-dignity.jpg" alt="STRENGTH & DIGNITY" class="product-image" loading="lazy">
+                        <img src="back-strength-dignity.png" alt="STRENGTH & DIGNITY Back" class="product-image-back" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">STRENGTH & DIGNITY</h3>
+                        <p class="product-scripture">Proverbs 31:25</p>
+                        <div class="product-bottom">
+                            <span class="product-price">$49.99</span>
+                            <a href="#all-products" class="product-btn">Shop</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card reveal">
+                    <div class="product-image-container">
+                        <img src="teens-brave.jpg" alt="BRAVE" class="product-image" loading="lazy">
+                        <img src="back-brave.png" alt="BRAVE Back" class="product-image-back" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">BRAVE</h3>
+                        <p class="product-scripture">Deuteronomy 31:6</p>
+                        <div class="product-bottom">
+                            <span class="product-price">$44.99</span>
+                            <a href="#all-products" class="product-btn">Shop</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card reveal">
+                    <div class="product-image-container">
+                        <img src="mens-walk-by-faith.jpg" alt="WALK BY FAITH" class="product-image" loading="lazy">
+                        <img src="back-walk-by-faith.png" alt="WALK BY FAITH Back" class="product-image-back" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">WALK BY FAITH</h3>
+                        <p class="product-scripture">2 Corinthians 5:7</p>
+                        <div class="product-bottom">
+                            <span class="product-price">$34.99</span>
+                            <a href="#all-products" class="product-btn">Shop</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: BRAND STATEMENT -->
+    <section class="section brand-statement">
+        <div class="section-inner reveal">
+            <p class="brand-statement-text">
+                Foi en Lui was built for those who refuse to fold under pressure.
+            </p>
+            <div class="brand-divider"></div>
+            <p class="brand-statement-sub">
+                Every piece represents something deeper than clothing.
+                It's a reminder of who you are when everything around you tests it.<br><br>
+                This is faith, worn without compromise.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION 4: COLLECTIONS -->
+    <section class="section collections" id="collections">
+        <div class="section-inner">
+            <p class="section-label reveal">Collections</p>
+            <h2 class="section-title reveal">Shop by Collection</h2>
+            <div class="collections-grid reveal">
+                <a href="#all-products" class="collection-tile" onclick="switchTab('mens')">
+                    <img src="mens-all-things.jpg" alt="Men's Collection" loading="lazy">
+                    <div class="collection-label">
+                        <h3>Men</h3>
+                        <span>8 Pieces</span>
+                    </div>
+                </a>
+                <a href="#all-products" class="collection-tile" onclick="switchTab('womens')">
+                    <img src="womens-grace.jpg" alt="Women's Collection" loading="lazy">
+                    <div class="collection-label">
+                        <h3>Women</h3>
+                        <span>8 Pieces</span>
+                    </div>
+                </a>
+                <a href="#all-products" class="collection-tile" onclick="switchTab('teens')">
+                    <img src="teens-nothing-impossible.jpg" alt="Teen Collection" loading="lazy">
+                    <div class="collection-label">
+                        <h3>Youth</h3>
+                        <span>8 Pieces</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: FEATURED PRODUCT -->
+    <section class="section featured" id="featured">
+        <div class="section-inner">
+            <div class="featured-inner reveal">
+                <div class="featured-image">
+                    <img src="mens-no-weapon.jpg" alt="NO WEAPON Tee" loading="lazy">
+                </div>
+                <div>
+                    <p class="featured-label">Featured</p>
+                    <h2 class="featured-name">NO WEAPON</h2>
+                    <p class="featured-tagline">Built for Pressure</p>
+                    <p class="featured-scripture">ISAIAH 54:17</p>
+                    <p class="featured-desc">
+                        This piece is designed for those who move through adversity without breaking.
+                    </p>
+                    <p class="featured-desc">
+                        Premium construction. Structured fit. Everyday durability.
+                    </p>
+                    <p class="featured-details">Storm Blue &middot; Embroidered Crest &middot; DTG Back Print</p>
+                    <a href="#all-products" class="btn">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: WHY -->
+    <section class="section why" id="about">
+        <div class="section-inner">
+            <p class="section-label reveal">Why Foi en Lui</p>
+            <div class="brand-divider" style="margin: 0 auto 48px;"></div>
+            <p class="why-text reveal">
+                This isn't about fashion.<br><br>
+                <strong>It's about identity.</strong><br><br>
+                In a world that constantly tries to shake you,
+                this is what keeps you grounded.<br><br>
+                You don't wear this to fit in.<br>
+                You wear it because you already know who you are.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION 7: SOCIAL PROOF -->
+    <section class="proof">
+        <div class="reveal">
+            <img src="crest-transparent.jpg" alt="" style="width:48px;height:auto;opacity:0.4;margin-bottom:32px;">
+            <p class="proof-quote">Worn by individuals who choose faith over fear.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 8: FINAL CTA -->
+    <section class="final-cta">
+        <div class="reveal">
+            <p class="final-cta-text">Wear your faith with <em>conviction.</em></p>
+            <a href="#all-products" class="btn btn-solid">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- ALL PRODUCTS (FULL CATALOG) -->
+    <section class="section all-products" id="all-products">
+        <div class="section-inner">
+            <p class="section-label">Full Catalog</p>
+            <h2 class="section-title">All Products</h2>
+
             <div class="collection-tabs">
-                <button class="tab-button active" data-tab="mens">Men's</button>
-                <button class="tab-button" data-tab="womens">Women's</button>
-                <button class="tab-button" data-tab="teens">Teens</button>
+                <button class="tab-btn active" onclick="switchTab('mens')">Men's</button>
+                <button class="tab-btn" onclick="switchTab('womens')">Women's</button>
+                <button class="tab-btn" onclick="switchTab('teens')">Teens</button>
             </div>
 
-            <!-- Men's Collection -->
-            <div class="collection-content active" id="mens">
-                <div class="product-grid">
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="mens-all-things.jpg" alt="ALL THINGS" class="product-image" loading="lazy">
-                            <img src="back-all-things.png" alt="ALL THINGS Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">ALL THINGS</h3>
-                            <p class="product-scripture">Philippians 4:13</p>
-                            <p class="product-type">Black Hoodie</p>
-                            <p class="product-price">$49.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="mens-courage-front.jpg" alt="COURAGE" class="product-image" loading="lazy">
-                            <img src="mens-courage-back.jpg" alt="COURAGE Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">COURAGE</h3>
-                            <p class="product-scripture">Joshua 1:9</p>
-                            <p class="product-type">Dark Grey Heather Tee</p>
-                            <p class="product-price">$34.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="mens-shepherd.jpg" alt="THE SHEPHERD" class="product-image" loading="lazy">
-                            <img src="back-shepherd.png" alt="THE SHEPHERD Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">THE SHEPHERD</h3>
-                            <p class="product-scripture">Psalm 23:1</p>
-                            <p class="product-type">Military Green Hoodie</p>
-                            <p class="product-price">$49.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="mens-no-weapon.jpg" alt="NO WEAPON" class="product-image" loading="lazy">
-                            <img src="back-no-weapon.png" alt="NO WEAPON Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">NO WEAPON</h3>
-                            <p class="product-scripture">Isaiah 54:17</p>
-                            <p class="product-type">Storm Blue Tee</p>
-                            <p class="product-price">$34.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="mens-walk-by-faith.jpg" alt="WALK BY FAITH" class="product-image" loading="lazy">
-                            <img src="back-walk-by-faith.png" alt="WALK BY FAITH Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">WALK BY FAITH</h3>
-                            <p class="product-scripture">2 Corinthians 5:7</p>
-                            <p class="product-type">Black Tee</p>
-                            <p class="product-price">$34.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="mens-armor-of-god.jpg" alt="ARMOR OF GOD" class="product-image" loading="lazy">
-                            <img src="back-armor-of-god.png" alt="ARMOR OF GOD Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">ARMOR OF GOD</h3>
-                            <p class="product-scripture">Ephesians 6:11</p>
-                            <p class="product-type">Charcoal Hoodie</p>
-                            <p class="product-price">$49.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="mens-unshaken.jpg" alt="UNSHAKEN" class="product-image" loading="lazy">
-                            <img src="back-unshaken.png" alt="UNSHAKEN Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">UNSHAKEN</h3>
-                            <p class="product-scripture">Psalm 16:8</p>
-                            <p class="product-type">Navy Tee</p>
-                            <p class="product-price">$34.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="mens-the-way.jpg" alt="THE WAY" class="product-image" loading="lazy">
-                            <img src="back-the-way.png" alt="THE WAY Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">THE WAY</h3>
-                            <p class="product-scripture">John 14:6</p>
-                            <p class="product-type">Forest Green Tee</p>
-                            <p class="product-price">$34.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
+            <!-- MEN'S -->
+            <div class="tab-content active" id="tab-mens">
+                <div class="full-grid">
+                    <div class="product-card"><div class="product-image-container"><img src="mens-all-things.jpg" alt="ALL THINGS" class="product-image" loading="lazy"><img src="back-all-things.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">ALL THINGS</h3><p class="product-scripture">Philippians 4:13 &middot; Black Hoodie</p><div class="product-bottom"><span class="product-price">$49.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
+                    <div class="product-card"><div class="product-image-container"><img src="mens-courage-front.jpg" alt="COURAGE" class="product-image" loading="lazy"><img src="mens-courage-back.jpg" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">COURAGE</h3><p class="product-scripture">Joshua 1:9 &middot; Dark Grey Heather Tee</p><div class="product-bottom"><span class="product-price">$34.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
+                    <div class="product-card"><div class="product-image-container"><img src="mens-shepherd.jpg" alt="THE SHEPHERD" class="product-image" loading="lazy"><img src="back-shepherd.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">THE SHEPHERD</h3><p class="product-scripture">Psalm 23:1 &middot; Military Green Hoodie</p><div class="product-bottom"><span class="product-price">$49.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
+                    <div class="product-card"><div class="product-image-container"><img src="mens-no-weapon.jpg" alt="NO WEAPON" class="product-image" loading="lazy"><img src="back-no-weapon.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">NO WEAPON</h3><p class="product-scripture">Isaiah 54:17 &middot; Storm Blue Tee</p><div class="product-bottom"><span class="product-price">$34.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
+                    <div class="product-card"><div class="product-image-container"><img src="mens-walk-by-faith.jpg" alt="WALK BY FAITH" class="product-image" loading="lazy"><img src="back-walk-by-faith.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">WALK BY FAITH</h3><p class="product-scripture">2 Corinthians 5:7 &middot; Black Tee</p><div class="product-bottom"><span class="product-price">$34.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
+                    <div class="product-card"><div class="product-image-container"><img src="mens-armor-of-god.jpg" alt="ARMOR OF GOD" class="product-image" loading="lazy"><img src="back-armor-of-god.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">ARMOR OF GOD</h3><p class="product-scripture">Ephesians 6:11 &middot; Charcoal Hoodie</p><div class="product-bottom"><span class="product-price">$49.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
+                    <div class="product-card"><div class="product-image-container"><img src="mens-unshaken.jpg" alt="UNSHAKEN" class="product-image" loading="lazy"><img src="back-unshaken.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">UNSHAKEN</h3><p class="product-scripture">Psalm 16:8 &middot; Navy Tee</p><div class="product-bottom"><span class="product-price">$34.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
+                    <div class="product-card"><div class="product-image-container"><img src="mens-the-way.jpg" alt="THE WAY" class="product-image" loading="lazy"><img src="back-the-way.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">THE WAY</h3><p class="product-scripture">John 14:6 &middot; Forest Green Tee</p><div class="product-bottom"><span class="product-price">$34.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
                 </div>
             </div>
 
-            <!-- Women's Collection -->
-            <div class="collection-content" id="womens">
-                <div class="product-grid">
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="womens-strength-dignity.jpg" alt="STRENGTH & DIGNITY" class="product-image" loading="lazy">
-                            <img src="back-strength-dignity.png" alt="STRENGTH & DIGNITY Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">STRENGTH & DIGNITY</h3>
-                            <p class="product-scripture">Proverbs 31:25</p>
-                            <p class="product-type">Dusty Rose Hoodie</p>
-                            <p class="product-price">$49.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="womens-be-still.jpg" alt="BE STILL" class="product-image" loading="lazy">
-                            <img src="back-be-still.png" alt="BE STILL Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">BE STILL</h3>
-                            <p class="product-scripture">Psalm 46:10</p>
-                            <p class="product-type">Cream Tee</p>
-                            <p class="product-price">$34.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="womens-the-plan.jpg" alt="THE PLAN" class="product-image" loading="lazy">
-                            <img src="back-the-plan.png" alt="THE PLAN Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">THE PLAN</h3>
-                            <p class="product-scripture">Jeremiah 29:11</p>
-                            <p class="product-type">Navy Hoodie</p>
-                            <p class="product-price">$49.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="womens-fearfully-made.jpg" alt="FEARFULLY MADE" class="product-image" loading="lazy">
-                            <img src="back-fearfully-made.png" alt="FEARFULLY MADE Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">FEARFULLY MADE</h3>
-                            <p class="product-scripture">Psalm 139:14</p>
-                            <p class="product-type">Sage Tee</p>
-                            <p class="product-price">$34.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="womens-joyful.jpg" alt="JOYFUL" class="product-image" loading="lazy">
-                            <img src="back-joyful.png" alt="JOYFUL Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">JOYFUL</h3>
-                            <p class="product-scripture">Nehemiah 8:10</p>
-                            <p class="product-type">Mauve Hoodie</p>
-                            <p class="product-price">$49.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="womens-shine.jpg" alt="SHINE" class="product-image" loading="lazy">
-                            <img src="back-shine.png" alt="SHINE Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">SHINE</h3>
-                            <p class="product-scripture">Matthew 5:16</p>
-                            <p class="product-type">White Tee</p>
-                            <p class="product-price">$34.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="womens-chosen.jpg" alt="CHOSEN" class="product-image" loading="lazy">
-                            <img src="back-chosen.png" alt="CHOSEN Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">CHOSEN</h3>
-                            <p class="product-scripture">1 Peter 2:9</p>
-                            <p class="product-type">Black Tee</p>
-                            <p class="product-price">$34.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="womens-grace.jpg" alt="GRACE UPON GRACE" class="product-image" loading="lazy">
-                            <img src="back-grace.png" alt="GRACE UPON GRACE Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">GRACE UPON GRACE</h3>
-                            <p class="product-scripture">John 1:16</p>
-                            <p class="product-type">Dusty Blue Hoodie</p>
-                            <p class="product-price">$49.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
+            <!-- WOMEN'S -->
+            <div class="tab-content" id="tab-womens">
+                <div class="full-grid">
+                    <div class="product-card"><div class="product-image-container"><img src="womens-strength-dignity.jpg" alt="STRENGTH & DIGNITY" class="product-image" loading="lazy"><img src="back-strength-dignity.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">STRENGTH & DIGNITY</h3><p class="product-scripture">Proverbs 31:25 &middot; Dusty Rose Hoodie</p><div class="product-bottom"><span class="product-price">$49.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
+                    <div class="product-card"><div class="product-image-container"><img src="womens-be-still.jpg" alt="BE STILL" class="product-image" loading="lazy"><img src="back-be-still.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">BE STILL</h3><p class="product-scripture">Psalm 46:10 &middot; Cream Tee</p><div class="product-bottom"><span class="product-price">$34.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
+                    <div class="product-card"><div class="product-image-container"><img src="womens-the-plan.jpg" alt="THE PLAN" class="product-image" loading="lazy"><img src="back-the-plan.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">THE PLAN</h3><p class="product-scripture">Jeremiah 29:11 &middot; Navy Hoodie</p><div class="product-bottom"><span class="product-price">$49.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
+                    <div class="product-card"><div class="product-image-container"><img src="womens-fearfully-made.jpg" alt="FEARFULLY MADE" class="product-image" loading="lazy"><img src="back-fearfully-made.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">FEARFULLY MADE</h3><p class="product-scripture">Psalm 139:14 &middot; Sage Tee</p><div class="product-bottom"><span class="product-price">$34.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
+                    <div class="product-card"><div class="product-image-container"><img src="womens-joyful.jpg" alt="JOYFUL" class="product-image" loading="lazy"><img src="back-joyful.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">JOYFUL</h3><p class="product-scripture">Nehemiah 8:10 &middot; Mauve Hoodie</p><div class="product-bottom"><span class="product-price">$49.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
+                    <div class="product-card"><div class="product-image-container"><img src="womens-shine.jpg" alt="SHINE" class="product-image" loading="lazy"><img src="back-shine.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">SHINE</h3><p class="product-scripture">Matthew 5:16 &middot; White Tee</p><div class="product-bottom"><span class="product-price">$34.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
+                    <div class="product-card"><div class="product-image-container"><img src="womens-chosen.jpg" alt="CHOSEN" class="product-image" loading="lazy"><img src="back-chosen.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">CHOSEN</h3><p class="product-scripture">1 Peter 2:9 &middot; Black Tee</p><div class="product-bottom"><span class="product-price">$34.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
+                    <div class="product-card"><div class="product-image-container"><img src="womens-grace.jpg" alt="GRACE UPON GRACE" class="product-image" loading="lazy"><img src="back-grace.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">GRACE UPON GRACE</h3><p class="product-scripture">John 1:16 &middot; Dusty Blue Hoodie</p><div class="product-bottom"><span class="product-price">$49.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
                 </div>
             </div>
 
-            <!-- Teen Collection -->
-            <div class="collection-content" id="teens">
-                <div class="product-grid">
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="teens-nothing-impossible.jpg" alt="NOTHING IMPOSSIBLE" class="product-image" loading="lazy">
-                            <img src="back-nothing-impossible.png" alt="NOTHING IMPOSSIBLE Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">NOTHING IMPOSSIBLE</h3>
-                            <p class="product-scripture">Luke 1:37</p>
-                            <p class="product-type">Slate Hoodie</p>
-                            <p class="product-price">$44.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="teens-trust.jpg" alt="TRUST" class="product-image" loading="lazy">
-                            <img src="back-trust.png" alt="TRUST Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">TRUST</h3>
-                            <p class="product-scripture">Proverbs 3:5</p>
-                            <p class="product-type">Black Tee</p>
-                            <p class="product-price">$29.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="teens-shine.jpg" alt="SHINE" class="product-image" loading="lazy">
-                            <img src="back-shine-teen.png" alt="SHINE Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">SHINE</h3>
-                            <p class="product-scripture">Matthew 5:16</p>
-                            <p class="product-type">Dusty Rose Tee</p>
-                            <p class="product-price">$29.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="teens-brave.jpg" alt="BRAVE" class="product-image" loading="lazy">
-                            <img src="back-brave.png" alt="BRAVE Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">BRAVE</h3>
-                            <p class="product-scripture">Deuteronomy 31:6</p>
-                            <p class="product-type">Heather Gray Hoodie</p>
-                            <p class="product-price">$44.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="teens-beloved.jpg" alt="BELOVED" class="product-image" loading="lazy">
-                            <img src="back-beloved.png" alt="BELOVED Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">BELOVED</h3>
-                            <p class="product-scripture">Romans 9:25</p>
-                            <p class="product-type">Lavender Tee</p>
-                            <p class="product-price">$29.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="teens-redeemed.jpg" alt="REDEEMED" class="product-image" loading="lazy">
-                            <img src="back-redeemed.png" alt="REDEEMED Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">REDEEMED</h3>
-                            <p class="product-scripture">Psalm 107:2</p>
-                            <p class="product-type">Black Hoodie</p>
-                            <p class="product-price">$44.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="teens-never-forsaken.jpg" alt="NEVER FORSAKEN" class="product-image" loading="lazy">
-                            <img src="back-never-forsaken.png" alt="NEVER FORSAKEN Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">NEVER FORSAKEN</h3>
-                            <p class="product-scripture">Deuteronomy 31:8</p>
-                            <p class="product-type">Navy Tee</p>
-                            <p class="product-price">$29.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <img src="teens-light-of-world.jpg" alt="LIGHT OF THE WORLD" class="product-image" loading="lazy">
-                            <img src="back-light-of-world.png" alt="LIGHT OF THE WORLD Back" class="product-image-back" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">LIGHT OF THE WORLD</h3>
-                            <p class="product-scripture">John 8:12</p>
-                            <p class="product-type">White Tee</p>
-                            <p class="product-price">$29.99</p>
-                            <button class="product-cta">Add to Cart</button>
-                        </div>
-                    </div>
+            <!-- TEENS -->
+            <div class="tab-content" id="tab-teens">
+                <div class="full-grid">
+                    <div class="product-card"><div class="product-image-container"><img src="teens-nothing-impossible.jpg" alt="NOTHING IMPOSSIBLE" class="product-image" loading="lazy"><img src="back-nothing-impossible.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">NOTHING IMPOSSIBLE</h3><p class="product-scripture">Luke 1:37 &middot; Slate Hoodie</p><div class="product-bottom"><span class="product-price">$44.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
+                    <div class="product-card"><div class="product-image-container"><img src="teens-trust.jpg" alt="TRUST" class="product-image" loading="lazy"><img src="back-trust.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">TRUST</h3><p class="product-scripture">Proverbs 3:5 &middot; Black Tee</p><div class="product-bottom"><span class="product-price">$29.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
+                    <div class="product-card"><div class="product-image-container"><img src="teens-shine.jpg" alt="SHINE" class="product-image" loading="lazy"><img src="back-shine-teen.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">SHINE</h3><p class="product-scripture">Matthew 5:16 &middot; Dusty Rose Tee</p><div class="product-bottom"><span class="product-price">$29.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
+                    <div class="product-card"><div class="product-image-container"><img src="teens-brave.jpg" alt="BRAVE" class="product-image" loading="lazy"><img src="back-brave.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">BRAVE</h3><p class="product-scripture">Deuteronomy 31:6 &middot; Heather Gray Hoodie</p><div class="product-bottom"><span class="product-price">$44.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
+                    <div class="product-card"><div class="product-image-container"><img src="teens-beloved.jpg" alt="BELOVED" class="product-image" loading="lazy"><img src="back-beloved.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">BELOVED</h3><p class="product-scripture">Romans 9:25 &middot; Lavender Tee</p><div class="product-bottom"><span class="product-price">$29.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
+                    <div class="product-card"><div class="product-image-container"><img src="teens-redeemed.jpg" alt="REDEEMED" class="product-image" loading="lazy"><img src="back-redeemed.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">REDEEMED</h3><p class="product-scripture">Psalm 107:2 &middot; Black Hoodie</p><div class="product-bottom"><span class="product-price">$44.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
+                    <div class="product-card"><div class="product-image-container"><img src="teens-never-forsaken.jpg" alt="NEVER FORSAKEN" class="product-image" loading="lazy"><img src="back-never-forsaken.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">NEVER FORSAKEN</h3><p class="product-scripture">Deuteronomy 31:8 &middot; Navy Tee</p><div class="product-bottom"><span class="product-price">$29.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
+                    <div class="product-card"><div class="product-image-container"><img src="teens-light-of-world.jpg" alt="LIGHT OF THE WORLD" class="product-image" loading="lazy"><img src="back-light-of-world.png" alt="" class="product-image-back" loading="lazy"></div><div class="product-info"><h3 class="product-name">LIGHT OF THE WORLD</h3><p class="product-scripture">John 8:12 &middot; White Tee</p><div class="product-bottom"><span class="product-price">$29.99</span><a href="#" class="product-btn">Add to Cart</a></div></div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Faith in Him</h2>
-                    <p>Foi en Lui represents more than just clothing—it's a declaration of faith, a testament to the power of believing in something greater than ourselves. Born from a passion to merge premium streetwear with timeless biblical truths, we create pieces that speak to the heart while elevating your style.</p>
-                    <p>Every design is carefully crafted to inspire, encourage, and remind the wearer of God's promises. From the moment you put on our pieces, you're not just wearing fashion—you're wearing your faith with confidence and purpose.</p>
-                    <p>Join a community of believers who aren't afraid to wear their faith boldly. Because when we place our foi en lui—our faith in Him—we become unstoppable.</p>
-                </div>
-                <div class="about-image">
-                    <img src="crest-transparent.jpg" alt="Foi en Lui Crest">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <div class="container">
-            <h2>Stay Connected</h2>
-            <p>Be the first to know about new drops, exclusive designs, and special offers</p>
-            <form class="newsletter-form" id="newsletter-form">
-                <input type="email" class="newsletter-input" placeholder="Enter your email" required>
-                <button type="submit" class="newsletter-submit">Subscribe</button>
-            </form>
-            <div class="newsletter-message" id="newsletter-message"></div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Shop</h3>
-                    <ul>
-                        <li><a href="#mens">Men's Collection</a></li>
-                        <li><a href="#womens">Women's Collection</a></li>
-                        <li><a href="#teens">Teens Collection</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Support</h3>
-                    <ul>
-                        <li><a href="#size-guide" onclick="openModal('size-guide')">Size Guide</a></li>
-                        <li><a href="#shipping-info" onclick="openModal('shipping-info')">Shipping & Returns</a></li>
-                        <li><a href="mailto:support@foienlui.com">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Connect</h3>
-                    <ul>
-                        <li><a href="https://instagram.com/foienlui" target="_blank">Instagram</a></li>
-                        <li><a href="https://facebook.com/foienlui" target="_blank">Facebook</a></li>
-                        <li><a href="https://twitter.com/foienlui" target="_blank">Twitter</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="#about">Our Story</a></li>
-                        <li><a href="#newsletter">Newsletter</a></li>
-                        <li><a href="mailto:support@foienlui.com">Wholesale</a></li>
-                    </ul>
-                </div>
+        <div class="footer-inner">
+            <div>
+                <a href="#" class="nav-brand">
+                    <img src="crest-transparent.jpg" alt="Foi en Lui" class="nav-logo">
+                    <span class="nav-wordmark">FOI EN LUI</span>
+                </a>
+                <p class="footer-brand-text">Premium faith-forward streetwear. Built for those who refuse to fold under pressure.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Foi en Lui. All rights reserved. | Made with faith and purpose.</p>
+            <div>
+                <h4>Shop</h4>
+                <a href="#all-products" onclick="switchTab('mens')">Men's</a>
+                <a href="#all-products" onclick="switchTab('womens')">Women's</a>
+                <a href="#all-products" onclick="switchTab('teens')">Teens</a>
             </div>
+            <div>
+                <h4>Info</h4>
+                <a href="#" onclick="openModal('sizeModal')">Size Guide</a>
+                <a href="#" onclick="openModal('shippingModal')">Shipping & Returns</a>
+                <a href="mailto:support@foienlui.com">Contact</a>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <a href="https://instagram.com/foienlui" target="_blank">Instagram</a>
+                <a href="https://facebook.com/foienlui" target="_blank">Facebook</a>
+                <a href="https://twitter.com/foienlui" target="_blank">Twitter</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Foi en Lui. All rights reserved. &middot; Faith in Him
         </div>
     </footer>
 
-    <!-- Size Guide Modal -->
-    <div class="modal" id="size-guide-modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal('size-guide')">&times;</span>
+    <!-- SIZE GUIDE MODAL -->
+    <div class="modal-overlay" id="sizeModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal('sizeModal')">&times;</button>
             <h2>Size Guide</h2>
             <h3>Hoodies & T-Shirts</h3>
-            <p><strong>Small:</strong> Chest 34-36", Length 27"</p>
-            <p><strong>Medium:</strong> Chest 38-40", Length 28"</p>
-            <p><strong>Large:</strong> Chest 42-44", Length 29"</p>
-            <p><strong>X-Large:</strong> Chest 46-48", Length 30"</p>
-            <p><strong>XX-Large:</strong> Chest 50-52", Length 31"</p>
+            <p>Small: Chest 34-36", Length 27"</p>
+            <p>Medium: Chest 38-40", Length 28"</p>
+            <p>Large: Chest 42-44", Length 29"</p>
+            <p>X-Large: Chest 46-48", Length 30"</p>
+            <p>XX-Large: Chest 50-52", Length 31"</p>
             <h3>Teen Sizes</h3>
-            <p><strong>XS:</strong> Chest 30-32", Length 25"</p>
-            <p><strong>Small:</strong> Chest 32-34", Length 26"</p>
-            <p><strong>Medium:</strong> Chest 34-36", Length 27"</p>
-            <p><strong>Large:</strong> Chest 36-38", Length 28"</p>
-            <p>For the best fit, measure your favorite piece and compare to our size chart.</p>
+            <p>XS: Chest 30-32", Length 25"</p>
+            <p>Small: Chest 32-34", Length 26"</p>
+            <p>Medium: Chest 34-36", Length 27"</p>
+            <p>Large: Chest 36-38", Length 28"</p>
+            <p style="margin-top:16px;font-style:italic;">Measure your favorite piece and compare for the best fit.</p>
         </div>
     </div>
 
-    <!-- Shipping Info Modal -->
-    <div class="modal" id="shipping-info-modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal('shipping-info')">&times;</span>
+    <!-- SHIPPING MODAL -->
+    <div class="modal-overlay" id="shippingModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal('shippingModal')">&times;</button>
             <h2>Shipping & Returns</h2>
             <h3>Shipping</h3>
-            <p><strong>Free Shipping:</strong> On orders $75+ (3-7 business days)</p>
-            <p><strong>Standard Shipping:</strong> $6.99 (3-7 business days)</p>
-            <p><strong>Express Shipping:</strong> $12.99 (1-3 business days)</p>
+            <p>Free Shipping on orders $75+ (3-7 business days)</p>
+            <p>Standard: $6.99 (3-7 business days)</p>
+            <p>Express: $12.99 (1-3 business days)</p>
             <h3>Returns</h3>
-            <p><strong>30-Day Returns:</strong> Items must be unworn with tags attached</p>
-            <p><strong>Exchanges:</strong> Free size/color exchanges within 30 days</p>
-            <p><strong>Return Process:</strong> Email support@foienlui.com for return authorization</p>
-            <p>International shipping available. Duties and taxes may apply.</p>
+            <p>30-day returns. Items must be unworn with tags attached.</p>
+            <p>Free size/color exchanges within 30 days.</p>
+            <p>Email support@foienlui.com for return authorization.</p>
         </div>
     </div>
 
     <script>
-        // Mobile Navigation
-        const navToggle = document.getElementById('nav-toggle');
-        const mobileNav = document.getElementById('mobile-nav');
-        const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
-        const mobileNavClose = document.getElementById('mobile-nav-close');
-
-        function openMobileNav() {
-            mobileNav.classList.add('active');
-            mobileNavOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeMobileNav() {
-            mobileNav.classList.remove('active');
-            mobileNavOverlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        navToggle.addEventListener('click', openMobileNav);
-        mobileNavClose.addEventListener('click', closeMobileNav);
-        mobileNavOverlay.addEventListener('click', closeMobileNav);
-
-        // Collection Tabs
-        const tabButtons = document.querySelectorAll('.tab-button');
-        const collectionContents = document.querySelectorAll('.collection-content');
-
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const targetTab = button.getAttribute('data-tab');
-                
-                // Remove active class from all tabs and content
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                collectionContents.forEach(content => content.classList.remove('active'));
-                
-                // Add active class to clicked tab and corresponding content
-                button.classList.add('active');
-                document.getElementById(targetTab).classList.add('active');
-            });
-        });
-
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        let lastScrollY = window.scrollY;
-
+        // Navigation scroll
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 80);
         });
 
-        // Newsletter form
-        const newsletterForm = document.getElementById('newsletter-form');
-        const newsletterMessage = document.getElementById('newsletter-message');
-
-        newsletterForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const email = e.target.querySelector('.newsletter-input').value;
-            
-            try {
-                // For now, simulate a successful subscription
-                // In production, this would POST to your email service
-                const response = await fetch('/api/newsletter', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ email: email })
-                });
-
-                // Simulate success for demo
-                setTimeout(() => {
-                    newsletterMessage.className = 'newsletter-message success';
-                    newsletterMessage.textContent = 'Thank you for subscribing! Welcome to the Foi en Lui family.';
-                    newsletterMessage.style.display = 'block';
-                    e.target.reset();
-                    
-                    setTimeout(() => {
-                        newsletterMessage.style.display = 'none';
-                    }, 5000);
-                }, 500);
-                
-            } catch (error) {
-                newsletterMessage.className = 'newsletter-message error';
-                newsletterMessage.textContent = 'Something went wrong. Please try again.';
-                newsletterMessage.style.display = 'block';
-                
-                setTimeout(() => {
-                    newsletterMessage.style.display = 'none';
-                }, 5000);
-            }
-        });
-
-        // Modal functions
-        function openModal(modalType) {
-            const modal = document.getElementById(modalType + '-modal');
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
+        // Mobile nav
+        function toggleMobileNav() {
+            document.getElementById('mobileNav').classList.toggle('active');
+            document.getElementById('mobileOverlay').classList.toggle('active');
         }
 
-        function closeModal(modalType) {
-            const modal = document.getElementById(modalType + '-modal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when clicking outside
-        window.addEventListener('click', (e) => {
-            if (e.target.classList.contains('modal')) {
-                e.target.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 100;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
+        // Tabs
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.getElementById('tab-' + tab).classList.add('active');
+            document.querySelectorAll('.tab-btn').forEach(b => {
+                if (b.textContent.toLowerCase().replace("'s","s").replace("'","") === tab ||
+                    (tab === 'mens' && b.textContent === "Men's") ||
+                    (tab === 'womens' && b.textContent === "Women's") ||
+                    (tab === 'teens' && b.textContent === "Teens")) {
+                    b.classList.add('active');
                 }
             });
+        }
+
+        // Modals
+        function openModal(id) { document.getElementById(id).classList.add('active'); }
+        function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+        document.querySelectorAll('.modal-overlay').forEach(m => {
+            m.addEventListener('click', (e) => { if (e.target === m) m.classList.remove('active'); });
         });
 
-        // Animate product cards on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        // Scroll reveal
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationDelay = Math.random() * 0.3 + 's';
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, observerOptions);
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        document.querySelectorAll('.product-card').forEach(card => {
-            observer.observe(card);
-        });
-
-        // Add to Cart functionality (placeholder)
-        document.querySelectorAll('.product-cta').forEach(button => {
-            button.addEventListener('click', function() {
-                const productCard = this.closest('.product-card');
-                const productName = productCard.querySelector('.product-name').textContent;
-                
-                // Change button text temporarily
-                const originalText = this.textContent;
-                this.textContent = 'Added!';
-                this.style.background = '#28a745';
-                
-                setTimeout(() => {
-                    this.textContent = originalText;
-                    this.style.background = '';
-                }, 1500);
-                
-                // In a real implementation, you would add the product to cart here
-                console.log(`Added ${productName} to cart`);
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
+                const t = document.querySelector(this.getAttribute('href'));
+                if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
             });
         });
     </script>
 </body>
-</html><!-- v1774790466 -->
+</html>
